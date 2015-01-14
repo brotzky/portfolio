@@ -1,9 +1,14 @@
 [submodule "forms"]
-        path = dennisbrotzky/forms
+        path = forms
         url = https://github.com/brotzky/forms.git
 [submodule "face"]
-        path = dennisbrotzky/face
+        path = face
         url = https://github.com/brotzky/css_drawing.git
 [submodule "codecore"]
-        path = dennisbrotzky/codecore
+        path = codecore
         url = https://github.com/brotzky/codecore.git
+[submodule "robot"]
+        path = robot
+        url = https://github.com/brotzky/robot.git
+
+
