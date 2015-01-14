@@ -1,0 +1,3 @@
+[submodule "codecore"]
+    path = codecore
+    url = https://github.com/brotzky/codecore
