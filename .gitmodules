@@ -4,11 +4,9 @@
 [submodule "face"]
         path = face
         url = https://github.com/brotzky/css_drawing.git
-[submodule "codecore"]
-        path = codecore
+[submodule "CodeCore"]
+        path = CodeCore
         url = https://github.com/brotzky/codecore.git
 [submodule "robot"]
         path = robot
         url = https://github.com/brotzky/robot.git
-
-
