@@ -22,7 +22,6 @@ var loadweather = function() {
         }
     });
   }
-
 // MOVE SCREEN WITH KEYBOARD
 var moveScreen = function(e) {
   e = e || window.event;
