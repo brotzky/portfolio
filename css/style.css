@@ -138,12 +138,12 @@ height: 100%;
   height: 100%;
   max-width: 580px;
   padding: 0;
-  margin: 0px auto 0px auto;
+  margin: 100px auto 0px auto;
   transition: all 600ms ease;
 }
 .em-imac {
   position: relative;
-  width: 200%;
+  width: 100%;
   margin: 0 auto 0 -260px;
 }
 .emcollective-writing {
@@ -1030,17 +1030,17 @@ figure {
     }
 
 .shoulderL-back {
-    -moz-transform: translatez(-43px);
+    bottom: -106px;
+    left: -14px;
+    width: 15px;
+    height: 56px;
+    background-color: #666
+    moz-transform: translatez(-43px);
     -ms-transform: translatez(-43px);
     -o-transform: translatez(-43px);
     -webkit-transform: translatez(-43px);
     transform: translatez(-43px);
-    width: 15px;
-    height: 56px;
-    bottom: -106px;
-    left: -14px;
-    background-color: #666
-    }
+}
 
 .shoulderL-left {
     -moz-transform: rotatey(-90deg) translatez(185px);
@@ -1053,7 +1053,7 @@ figure {
     bottom: -104px;
     right: 5px;
     background-color: #666
-    }
+}
 
 .armL-top {
     -moz-transform: rotatex(90deg) translatez(-10px);
@@ -1182,21 +1182,21 @@ figure {
     -o-transform: translatez(-45px);
     -webkit-transform: translatez(-45px);
     transform: translatez(-45px);
-    width: 26px;
+    width: 28px;
     height: 84px;
     bottom: -219px;
-    left: -38px;
+    left: -40px;
     -moz-box-shadow: inset 0 0 100px #4E4E4E;
     -webkit-box-shadow: inset 0 0 100px #4E4E4E;
     box-shadow: inset 0 0 100px #4E4E4E
     }
 
 .armLF-left {
-    -moz-transform: rotatey(-90deg) translatez(185px);
-    -ms-transform: rotatey(-90deg) translatez(185px);
-    -o-transform: rotatey(-90deg) translatez(185px);
-    -webkit-transform: rotatey(-90deg) translatez(185px);
-    transform: rotatey(-90deg) translatez(185px);
+    -moz-transform: rotatey(-90deg) translatez(183px);
+    -ms-transform: rotatey(-90deg) translatez(183px);
+    -o-transform: rotatey(-90deg) translatez(183px);
+    -webkit-transform: rotatey(-90deg) translatez(183px);
+    transform: rotatey(-90deg) translatez(183px);
     width: 85px;
     height: 92px;
     bottom: -222px;
@@ -1213,7 +1213,7 @@ figure {
     -webkit-transform: rotatey(-90deg) rotate(90deg) translatez(185px);
     transform: rotatey(-90deg) rotate(90deg) translatez(185px);
     width: 85px;
-    height: 92px;
+    height: 89px;
     bottom: -224px;
     right: 5px;
     -moz-box-shadow: inset 0 0 100px #4E4E4E;
@@ -1399,7 +1399,7 @@ figure {
     -moz-box-shadow: inset 0 30px 110px #3F3F3F;
     -webkit-box-shadow: inset 0 30px 110px #3F3F3F;
     box-shadow: inset 0 30px 110px #3F3F3F
-    }
+}
 
 .legL-back {
     -moz-transform: translatez(-33px);
@@ -2175,8 +2175,44 @@ figure {
   height: 200px;
   width: 200px;
 }
-.face-img {
+.writing-book {
   position: absolute;
-  opacity: 0.6;
-  left: 100px;
+  top: 300px;
+  left: -200px;
+  height: 380px;
+   -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.pencil {
+  position: absolute;
+  right: -60px;
+  -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+.post-it {
+  position: absolute;
+  top: 400px;
+  right: 20px;
+  height: 200px;
+   -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+.ruler {
+  position: absolute;
+  left: 50px;
+  height: 90px;
+  -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
