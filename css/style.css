@@ -51,13 +51,18 @@ header {
 	display: inline;
 	vertical-align: bottom;
 	float: right;
-	color: rgba(0,0,0,0.3);
+	color: rgba(0,0,0,0.4);
 	font-size: 1.1em;
   text-decoration: none;
 }
 .header-mailto {
   text-decoration: none;
-  color: rgba(0,0,0,0.3);
+  color: rgba(0,0,0,0.5);
+  transition: color 350ms ease-in-out;
+}
+.header-mailto:hover {
+  text-decoration: none;
+  color: rgba(0,0,0,1);
 }
 .header-left {
 	display: inline;
@@ -69,13 +74,17 @@ header {
       font-weight: 400;
 }
 .dennis-brotzky-forms {
+  position: relative;
+  top: -20px;
+  left: -50px;
   display: inline;
   font-family: 'Lato', 'Helvertica', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.6em;
   letter-spacing: 2px;
   color:#CD4435;
   text-transform: lowercase;
       font-weight: 400;
+      text-shadow: 1px 1px #e0e0e0;
 }
 .content-writing {
 	padding: 5px 0px;
@@ -117,85 +126,78 @@ height: 100%;
   height: 900px;
   padding: 30px 0px;
   margin: 0;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(249, 249, 249, 1))),
-                        url(http://localhost:8888/dennisbrotzky/img/mcgill-snow-long-arrow-white.jpg) no-repeat center center;
+  background:
+                        url(http://localhost:8888/dennisbrotzky/img/mcgill-snow-long-arrow2.jpg) no-repeat center center;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .block-emcollective {
+  position: relative;
+  top: -60px;
   background-color: #FFFFFF;
   height: 100%;
-  padding-bottom: 60px;
-  border-bottom: 1px solid #EDEDED;
+  padding-bottom: 75px;
+
 }
 .block-emcollective-images {
   height: 100%;
   background-color: #FFFFFF;
-  border-top: 1px solid #EDEDED;
+  border: 1px solid #EDEDED;
 }
 .emcollective {
   height: 100%;
   max-width: 580px;
   padding: 0;
-  margin: 100px auto 0px auto;
+  margin: 10px auto 0px auto;
   transition: all 600ms ease;
 }
 .em-imac {
   position: relative;
   width: 130%;
-  right: -180px;
-  margin: ;
+  top: -75px;
+  right: -170px;
 }
 .em-macbook {
   position: absolute;
   width: 120%;
   right: 180px;
-  top: 488px;
+  top: 415px;
   margin: ;
 }
-.squirrel-arrow {
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  top: 125px;
-  left: -100px;
-  opacity: 0.1;
-}
-.deadsquirrel {
-  position: absolute;
-  top: 120px;
-  left: -50px;
-  height: 20px;
-  width: 20px;
-}
-.em-ipad {
-  position: absolute;
-  width: 50%;
-  left: -400px;
-  top: 550px;
-  margin: ;
+.video-player {
+  position: relative;
+  float: right;
+  top: 0px;
+  padding: 0px 25px;
 }
 .em-iphone {
   position: relative;
-  width: 239px;
+  width: 250px;
   top: 0px;
-  margin: 0 auto;
+  margin: 10px auto;
   -webkit-transform-origin: 50% 75%;
   transition: all 750ms ease-in-out;
 }
-.em-iphone:hover {
-
-}
 .iphone-video {
   position: absolute;
-height: 374px;
-width: 259px;
-left: -11px;
-top: 49px;
+  height: 394px;
+  width: 253px;
+  left:  23px;
+top: 57px;
 }
 .emcollective-writing {
+  padding: 5px 0px;
+  margin: 20px 0;
+  color: rgba(0,0,0,0.5);
+  font-size: 0.99em;
+  vertical-align: bottom;
+  line-height: 1.59em;
+}
+.emcollective-writing-middle {
+  text-align: left;
   padding: 5px 0px;
   margin: 20px 0;
   color: rgba(0,0,0,0.5);
@@ -206,7 +208,12 @@ top: 49px;
 .forms {
   background-color: #F9F9F9;
   height: auto;
-  padding-bottom: 0px;
+  padding-top: 100px;
+}
+.forms-about {
+  background-color: #F9F9F9;
+  height: auto;
+  padding-bottom: 100px;
 }
 .block-forms {
   height: 700px;
@@ -229,14 +236,15 @@ top: 49px;
   position: relative;
   top: 1px;
   text-decoration: none;
-  color: #454e59;
-  transition: all 100ms ease;
+  color: #336699;
+  transition: all 50ms ease;
 }
 .fa-arrow-right {
-  color: #454e59;
+  color: #336699;
 }
 .project-link:hover, .project-link:active {
-  color: #336699
+  color: #454e59;
+  text-decoration: underline;
 }
 
 footer {
@@ -365,11 +373,11 @@ textarea {
     -o-transform-origin: 50% 50% 0;
     -webkit-transform-origin: 50% 50% 0;
     transform-origin: 50% 50% 0
-    }
+}
 .container {
     position: relative;
     margin: 0 auto;
-    }
+}
 .text {
     position: relative;
     text-align: center;
@@ -381,56 +389,52 @@ textarea {
     width: 300px;
     height: 300px;
     -webkit-perspective: 1600px;
+    -moz-perspective:    1600px;
+    -ms-perspective:      1600px;
+    -o-perspective:         1600px;
+    perspective:             1600px;
     -webkit-perspective-origin: 50% -240px;
-     -moz-perspective: 1600px;
-    -moz-perspective-origin: 50% -240px;
-     -ms-perspective: 1600px;
-    -ms-perspective-origin: 50% -240px;
-     -o-perspective: 1600px;
-    -o-perspective-origin: 50% -240px;
-    perspective: 1600px;
-    perspective-origin: 50% -240px;
+    -moz-perspective-origin:    50% -240px;
+    -ms-perspective-origin:      50% -240px;
+    -o-perspective-origin:         50% -240px;
+    perspective-origin:             50% -240px;
     }
 figure {
     display: block;
     position: absolute;
     background-color: #c0c0c0;
-    -moz-transform-origin: 50% 50% 0;
-    -ms-transform-origin: 50% 50% 0;
-    -o-transform-origin: 50% 50% 0;
     -webkit-transform-origin: 50% 50% 0;
-    transform-origin: 50% 50% 0
-
-    }
-
-.cube {
-    }
-    .preserve3D {
-      -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transform-style: preserve-3d
-    }
-
+    -moz-transform-origin:    50% 50% 0;
+    -ms-transform-origin:      50% 50% 0;
+    -o-transform-origin:         50% 50% 0;
+    transform-origin:             50% 50% 0;
+}
+.preserve3D {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style:    preserve-3d;
+    -ms-transform-style:      preserve-3d;
+    -o-transform-style:         preserve-3d;
+    transform-style:             preserve-3d;
+}
 .body-front {
-    -moz-transform: translatez(66px);
-    -ms-transform: translatez(66px);
-    -o-transform: translatez(66px);
     -webkit-transform: translatez(66px);
-    transform: translatez(66px);
+    -moz-transform:    translatez(66px);
+    -ms-transform:      translatez(66px);
+    -o-transform:         translatez(66px);
+    transform:             translatez(66px);
     width: 219px;
     height: 250px;
-    -moz-box-shadow: inset 0 -50px 200px #4E4E4E;
     -webkit-box-shadow: inset 0 -50px 200px #4E4E4E;
-    box-shadow: inset 0 -50px 200px #4E4E4E
+    -moz-box-shadow:    inset 0 -50px 200px #4E4E4E;
+    box-shadow:             inset 0 -50px 200px #4E4E4E
     }
 
 .body-back {
-    -moz-transform: rotatey(180deg) translatez(66px);
-    -ms-transform: rotatey(180deg) translatez(66px);
-    -o-transform: rotatey(180deg) translatez(66px);
     -webkit-transform: rotatey(180deg) translatez(66px);
+    -moz-transform: rotatey(180deg) translatez(66px);
+    -ms-transform:   rotatey(180deg) translatez(66px);
+    -o-transform:     rotatey(180deg) translatez(66px);
+
     transform: rotatey(180deg) translatez(66px);
     width: 219px;
     height: 250px;
@@ -985,7 +989,7 @@ figure {
     height: 88px;
     bottom: -71px;
     right: -18px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderR-bottom {
@@ -998,7 +1002,7 @@ figure {
     height: 88px;
     bottom: -71px;
     right: -18px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderR-front {
@@ -1011,7 +1015,7 @@ figure {
     height: 56px;
     bottom: -106px;
     left: 220px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderR-back {
@@ -1024,7 +1028,7 @@ figure {
     height: 56px;
     bottom: -106px;
     left: 219px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderR-right {
@@ -1037,7 +1041,7 @@ figure {
     height: 54px;
     bottom: -104px;
     right: -242px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderL-top {
@@ -1050,7 +1054,7 @@ figure {
     height: 88px;
     bottom: -71px;
     right: 217px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderL-bottom {
@@ -1063,7 +1067,7 @@ figure {
     height: 88px;
     bottom: -71px;
     right: 217px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderL-front {
@@ -1076,7 +1080,7 @@ figure {
     height: 56px;
     bottom: -106px;
     left: -14px;
-    background-color: #666
+    background-color: #666;
     }
 
 .shoulderL-back {
@@ -1084,7 +1088,7 @@ figure {
     left: -14px;
     width: 15px;
     height: 56px;
-    background-color: #666
+    background-color: #666;
     moz-transform: translatez(-43px);
     -ms-transform: translatez(-43px);
     -o-transform: translatez(-43px);
@@ -1102,7 +1106,7 @@ figure {
     height: 53px;
     bottom: -104px;
     right: 5px;
-    background-color: #666
+    background-color: #666;
 }
 
 .armL-top {
@@ -1707,7 +1711,7 @@ figure {
     width: 70px;
     height: 25px;
     bottom: -454px;
-    left: 131px;
+    left: 130px;
     -moz-box-shadow: inset 0 0 4px #570C02;
     -webkit-box-shadow: inset 0 0 4px #570C02;
     box-shadow: inset 0 0 4px #570C02;
@@ -2239,6 +2243,7 @@ figure {
 .pencil {
   position: absolute;
   right: -60px;
+  -webkit-backface-visibility: hidden;
   -moz-transform: rotate(5deg);
     -ms-transform: rotate(5deg);
     -o-transform: rotate(5deg);

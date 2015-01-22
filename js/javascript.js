@@ -23,20 +23,7 @@ var loadweather = function() {
     });
   }
 // MOVE SCREEN WITH KEYBOARD
-var moveScreen = function(e) {
-  e = e || window.event;
-  if (e.keyCode == '38') {
-  }
-  else if (e.keyCode == '40') {
-    // down arrow
-  }
-  else if (e.keyCode == '37') {
-    // left arrow
-  }
-  else if (e.keyCode == '39') {
-    // right arrow
-  }
-}
+
 
 // ACTIVE TOGGLE FOR BUTTON SELECTION
 var buttonActive = function(){
@@ -182,57 +169,38 @@ var heartReveal = function(){
         },'linear');
       });
     }
+// VIDEO PLAY PAUSE FUNCTION DEPENDING ON PAGE POSITION;
+var playVideo = function() {
+  var userScrolled = false;
 
-// VIDEO
+  $(window).scroll(function() {
+    userScrolled = true;
+  });
 
-
-
-
-function checkScroll() {
-  var video = document.getElementById("myVideo"),
-    info = document.getElementById('myVideo'),
-    fraction = 0.8;
-  var x = video.offsetLeft,
-      y = video.offsetTop,
-      w = video.offsetWidth,
-      h = video.offsetHeight,
-      r = x + w, //right
-      b = y + h, //bottom
-      visibleX,
-      visibleY,
-      visible;
-
-  if (window.pageXOffset >= r ||
-      window.pageYOffset >= b ||
-      window.pageXOffset + window.innerWidth < x ||
-      window.pageYOffset + window.innerHeight < y
-     ) {
-
-    info.innerHTML = '0%';
-    return;
+  setInterval(function() {
+    if (userScrolled) {
+      var video = document.getElementById("myVideo");
+       if (pageYOffset > 1500 && pageYOffset < 2000) {
+          // play video in pageYOffset region
+          video.play();
+        } else {
+          // pause video if not in region
+          video.pause();
+        }
+      userScrolled = false;
     }
-
-  visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
-  visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
-
-  visible = visibleX * visibleY / (w * h);
-
-  info.innerHTML = Math.round(visible * 100) + '%';
-
-  if (visible > fraction) {
-    video.play();
-    console.log("yolo");
-  } else {
-    video.pause();
-  }
+  }, 500);
+  // 500ms delay on scroll event
 }
+
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
 $(document).ready(function(){
+
   loadweather();
   buttonActive();
   renderRobot();
   rotateRobot();
-  moveScreen();
+
   heartReveal();
-  checkScroll();
+  playVideo();
 });
