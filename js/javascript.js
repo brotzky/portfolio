@@ -183,6 +183,49 @@ var heartReveal = function(){
       });
     }
 
+// VIDEO
+
+
+
+
+function checkScroll() {
+  var video = document.getElementById("myVideo"),
+    info = document.getElementById('myVideo'),
+    fraction = 0.8;
+  var x = video.offsetLeft,
+      y = video.offsetTop,
+      w = video.offsetWidth,
+      h = video.offsetHeight,
+      r = x + w, //right
+      b = y + h, //bottom
+      visibleX,
+      visibleY,
+      visible;
+
+  if (window.pageXOffset >= r ||
+      window.pageYOffset >= b ||
+      window.pageXOffset + window.innerWidth < x ||
+      window.pageYOffset + window.innerHeight < y
+     ) {
+
+    info.innerHTML = '0%';
+    return;
+    }
+
+  visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
+  visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+
+  visible = visibleX * visibleY / (w * h);
+
+  info.innerHTML = Math.round(visible * 100) + '%';
+
+  if (visible > fraction) {
+    video.play();
+    console.log("yolo");
+  } else {
+    video.pause();
+  }
+}
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
 $(document).ready(function(){
   loadweather();
@@ -191,4 +234,5 @@ $(document).ready(function(){
   rotateRobot();
   moveScreen();
   heartReveal();
+  checkScroll();
 });

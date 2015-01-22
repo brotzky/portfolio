@@ -1,7 +1,8 @@
 * { -webkit-box-sizing:     border-box;
     -moz-box-sizing:         border-box;
     box-sizing:                  border-box;
-    font-smoothing:          antialiased;
+    -webkit-font-smoothing:  antialiased;
+    font-smoothing:               antialiased;
 }
 html, body {
   margin: 0;
@@ -143,8 +144,56 @@ height: 100%;
 }
 .em-imac {
   position: relative;
-  width: 100%;
-  margin: 0 auto 0 -260px;
+  width: 130%;
+  right: -180px;
+  margin: ;
+}
+.em-macbook {
+  position: absolute;
+  width: 120%;
+  right: 180px;
+  top: 488px;
+  margin: ;
+}
+.squirrel-arrow {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  top: 125px;
+  left: -100px;
+  opacity: 0.1;
+}
+.deadsquirrel {
+  position: absolute;
+  top: 120px;
+  left: -50px;
+  height: 20px;
+  width: 20px;
+}
+.em-ipad {
+  position: absolute;
+  width: 50%;
+  left: -400px;
+  top: 550px;
+  margin: ;
+}
+.em-iphone {
+  position: relative;
+  width: 239px;
+  top: 0px;
+  margin: 0 auto;
+  -webkit-transform-origin: 50% 75%;
+  transition: all 750ms ease-in-out;
+}
+.em-iphone:hover {
+
+}
+.iphone-video {
+  position: absolute;
+height: 374px;
+width: 259px;
+left: -11px;
+top: 49px;
 }
 .emcollective-writing {
   padding: 5px 0px;
@@ -351,6 +400,7 @@ figure {
     -o-transform-origin: 50% 50% 0;
     -webkit-transform-origin: 50% 50% 0;
     transform-origin: 50% 50% 0
+
     }
 
 .cube {
@@ -2198,7 +2248,7 @@ figure {
 .post-it {
   position: absolute;
   top: 400px;
-  right: 20px;
+  right: 40px;
   height: 200px;
    -moz-transform: rotate(-15deg);
     -ms-transform: rotate(-15deg);
