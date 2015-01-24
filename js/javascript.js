@@ -197,24 +197,19 @@ var playVideo = function() {
 
 var formSubmission = function() {
   $('.button').click(function(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     var name = $("#name").val();
     var email = $("#email").val();
     var message = $("#message").val();
-    var data = {
-      "name":name,
-      "email":email,
-      "message":message
-    }
-    //var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
+    var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
+    //alert(dataString);
 
     $.ajax({
         type:'post',
         url: 'php/contact-process.php',
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(data),
-        dataType:"json",
+        data: dataString,
         success: function(msg)
         {
             console.log('Email Sent');
