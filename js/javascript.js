@@ -23,7 +23,21 @@ var loadweather = function() {
     });
   }
 // MOVE SCREEN WITH KEYBOARD
+function moveScreen(e) {
+    e = e || window.event;
+    if (e.keyCode == '38') {
 
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+    }
+}
 
 // ACTIVE TOGGLE FOR BUTTON SELECTION
 var buttonActive = function(){
@@ -194,26 +208,24 @@ var playVideo = function() {
 }
 
 // FORM SUMBITTION
-
 var formSubmission = function() {
-  $('.button').click(function(event) {
+  $('#myForm').submit(function(event) {
     event.preventDefault();
 
     var name = $("#name").val();
     var email = $("#email").val();
     var message = $("#message").val();
     var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
-    alert(dataString);
+    console.log(dataString);
 
     $.ajax({
         type:'POST',
         url: 'contact.php',
-        data: $('.myForm').serialize(),
-        success: function(msg)
-        {
+        data: dataString,
+        success: function(msg) {
             console.log('Email Sent');
         },
-        error:  function(xhr, status, error){
+        error:  function(xhr, status, error) {
           console.log(error);
         }
       });
@@ -222,6 +234,7 @@ var formSubmission = function() {
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
 $(document).ready(function(){
   loadweather();
+  moveScreen();
   buttonActive();
   renderRobot();
   rotateRobot();
