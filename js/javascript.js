@@ -213,7 +213,7 @@ var formSubmission = function() {
         type:'post',
         url: 'php/contact-process.php',
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({data}),
+        data: JSON.stringify(data),
         dataType:"json",
         success: function(msg)
         {
