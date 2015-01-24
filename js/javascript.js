@@ -210,19 +210,20 @@ var formSubmission = function() {
     //var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
 
     $.ajax({
-        type:'POST',
+        type:'post',
         url: 'php/contact-process.php',
-        dataType:"html",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(data),
+        data: JSON.stringify({data}),
+        dataType:"json",
         success: function(msg)
         {
             console.log('Email Sent');
         },
         error:  function(xhr, status, error){
-          console.log(error + " error from here");
+          console.log(error);
         }
       });
+    return false;
   });
 }
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
