@@ -197,7 +197,7 @@ var playVideo = function() {
 
 var formSubmission = function() {
   $('.button').click(function(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     var name = $("input#name").val();
     var email = $("input#email").val();
@@ -207,7 +207,7 @@ var formSubmission = function() {
     $.ajax({
         type:'POST',
         url: 'php/contact-process.php',
-         data: JSON.stringify(data),
+         data: JSON.stringify(dataString),
         contentType: "application/json; charset=utf-8",
          dataType:"json",
         success: function(msg)
