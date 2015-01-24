@@ -203,12 +203,13 @@ var formSubmission = function() {
     var email = $("#email").val();
     var message = $("#message").val();
     var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
-    //alert(dataString);
+    alert(dataString);
 
     $.ajax({
-        type:'post',
+        type:'POST',
         url: 'php/contact-process.php',
         contentType: "application/json; charset=utf-8",
+        dataType: "text",
         data: dataString,
         success: function(msg)
         {
@@ -218,7 +219,6 @@ var formSubmission = function() {
           console.log(error);
         }
       });
-    return false;
   });
 }
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
