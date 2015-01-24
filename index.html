@@ -155,7 +155,7 @@
                 form layout, funciton, and the covert details.
               </p>
               <p class ="content-writing">
-                Each form is unique for the rest
+                Each form is interactive and unique from the rest. They
               </p>
               <p>
                 <span class="fa fa-arrow-right"></span><a class="project-link" target="blank" href="/forms/index.html"> View Project</a>
@@ -370,15 +370,15 @@
           </header>
           <!--Start of Contact Form -->
           <div class="contact-form">
-            <form action="#" method="post" id="">
+            <form method="post" action="php/contact-process.php" id="">
               <fieldset class="fieldset">
-                <input class="first" type="text" id="first" name="first" placeholder="Full Name"
+                <input class="first" type="text" id="name" name="name" placeholder="Full Name"
                   onfocus="this.placeholder = ''Full Name" onblur="this.placeholder = 'Full Name'"/>
                 <input class="email" type="email" id="email" name="email" placeholder="Email"
                   onfocus="this.placeholder = ''Email" onblur="this.placeholder = 'Email'"/>
-                <textarea class ="message" name="textarea" rows="5" cols="25" placeholder="Message"
+                <textarea class ="message" id="message" name="message" rows="5" cols="25" placeholder="Message"
                   onfocus="this.placeholder = ''Message" onblur="this.placeholder = 'Message'"></textarea>
-                <button class="button">Send</button>
+                <button type="submit" class="button">Send</button>
               </fieldset>
             </form>
           </div>

@@ -193,14 +193,38 @@ var playVideo = function() {
   // 500ms delay on scroll event
 }
 
+// FORM SUMBITTION
+
+var formSubmission = function() {
+  $('.button').click(function(event) {
+    //event.preventDefault();
+
+    var name = $("input#name").val();
+    var email = $("input#email").val();
+    var message = $("input#message").val();
+    var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
+
+    $.ajax({
+        type:'POST',
+        url: 'php/contact-process.php',
+        data: dataString,
+        success: function(msg)
+        {
+            console.log('Email Sent');
+        },
+        error:  function(xhr, status, error){
+          console.log(error + " error from here");
+        }
+      });
+  });
+}
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
 $(document).ready(function(){
-
   loadweather();
   buttonActive();
   renderRobot();
   rotateRobot();
-
   heartReveal();
   playVideo();
+  formSubmission();
 });
