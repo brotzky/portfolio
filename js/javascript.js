@@ -207,7 +207,7 @@ var formSubmission = function() {
     $.ajax({
         type:'POST',
         url: 'php/contact-process.php',
-        data: dataString,
+         data: JSON.stringify({dataString:"test"}),
         contentType: "application/json; charset=utf-8",
          dataType:"json",
         success: function(msg)
