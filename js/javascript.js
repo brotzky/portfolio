@@ -212,6 +212,8 @@ var formSubmission = function() {
   $('#myForm').submit(function(event) {
     event.preventDefault();
 
+    var button = $('.button');
+    var response = $('.response-message');
     var name = $("#name").val();
     var email = $("#email").val();
     var message = $("#message").val();
@@ -220,13 +222,31 @@ var formSubmission = function() {
 
     $.ajax({
         type:'POST',
-        url: 'contact.php',
+        url: 'php/contact.php',
         data: dataString,
         success: function(msg) {
             console.log('Email Sent');
+
+            button.animate({
+              backgroundColor: "#43A047",
+              color: "#fff",
+            }, 300 );
+            window.setTimeout(function () {
+              button.delay( 1000 ).html('success');
+            }, 400);
+            response.animate({opacity: 0.8});
+            response.fadeIn('slow').html('Thank you, ' + name + ', I will respond shortly.');
         },
         error:  function(xhr, status, error) {
-          console.log(error);
+          button.animate({
+              backgroundColor: "#CD4435",
+              color: "#fff",
+            }, 300 );
+            window.setTimeout(function () {
+              button.delay( 1000 ).html('error');
+            }, 400);
+          response.animate({opacity: 0.8});
+          response.fadeIn('slow').html('Sorry, ' + name + ', there was an error. Please email brotzky@gmail.com');
         }
       });
   });

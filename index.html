@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Front -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <!-- Meta -->
     <meta property="og:title" content="Dennis Brotzky" />
     <meta property="og:type" content="website" />
@@ -371,7 +373,7 @@
           </header>
           <!--Start of Contact Form -->
           <div class="contact-form">
-            <form method="POST" action="contact.php" id="myForm">
+            <form method="POST" action="php/contact.php" id="myForm">
               <fieldset class="fieldset">
                 <input class="first" type="text" id="name" name="name" placeholder="Full Name"
                   onfocus="this.placeholder = ''Full Name" onblur="this.placeholder = 'Full Name'"/>
@@ -380,6 +382,7 @@
                 <textarea class ="message" id="message" name="message" rows="5" cols="25" placeholder="Message"
                   onfocus="this.placeholder = ''Message" onblur="this.placeholder = 'Message'"></textarea>
                 <button type="submit" class="button">Send</button>
+                <p class="response-message">placeholder</p>
               </fieldset>
             </form>
           </div>
@@ -397,6 +400,7 @@
 
     <!-- jQuery Library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <!-- jQuery Local Library
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>-->
     <!-- JavaSscript -->

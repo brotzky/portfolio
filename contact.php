@@ -1,4 +1,4 @@
-<pre><?php
+<?php
 
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -25,4 +25,3 @@
       echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
     }
 ?>
-</pre>
