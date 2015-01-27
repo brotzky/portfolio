@@ -246,7 +246,7 @@ var formSubmission = function() {
               button.delay( 1000 ).html('error');
             }, 400);
           response.animate({opacity: 0.8});
-          response.fadeIn('slow').html('Sorry, ' + name + ', there was an error. Please email brotzky@gmail.com');
+          response.fadeIn('slow').html('Sorry, ' + name + ', there was an error. Please email <a href="mailto:brotzky@gmail.com?Subject=Form%20error" target="_top">brotzky@gmail.com</a>');
         }
       });
   });
