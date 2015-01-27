@@ -62,7 +62,7 @@ header {
 .header-mailto {
   text-decoration: none;
   color: rgba(0,0,0,0.5);
-  transition: color 350ms ease-in-out;
+  transition: color 300ms ease-in-out;
 }
 .header-mailto:hover {
   text-decoration: none;
@@ -188,8 +188,6 @@ height: 100%;
   width: 250px;
   top: 0px;
   margin: 10px auto;
-  -webkit-transform-origin: 50% 75%;
-  transition: all 750ms ease-in-out;
 }
 .iphone-video {
   position: absolute;
