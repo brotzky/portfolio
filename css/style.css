@@ -7,7 +7,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background:#F9F9F9;
+  background-color: #F9F9F9;
   color: #4A4A4A;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
@@ -17,6 +17,7 @@ html, body {
   font-family: "Lato","Helvetica Neue", Helvetica, sans-serif;
   word-spacing: 0.1em;
   border-top: 4px solid rgba(0,0,0,0.5);
+
 }
 .container {
   position: relative;
@@ -24,7 +25,7 @@ html, body {
   min-height: 100%;
   display: block;
   margin: -30px auto;
-  box-shadow: 0px 4px 9px rgba(213, 213, 213, 0.45);
+  box-shadow: 0px 4px 5px rgba(213, 213, 213, 0.45);
   border-left: 1px solid #EDEDED;
   border-right: 1px solid #EDEDED;
 }
@@ -93,13 +94,14 @@ header {
 .content-writing {
 	padding: 5px 0px;
 	margin: 20px 0;
-	color: rgba(0,0,0,0.5);
+	color: rgba(0,0,0,0.6);
 	font-size: 0.99em;
 	vertical-align: bottom;
 	line-height: 1.59em;
 }
 .introduction {
   padding-bottom: 80px;
+  background:#F9F9F9;
 }
 .block-content {
 	margin: 0 auto;
@@ -168,14 +170,13 @@ height: 100%;
   width: 120%;
   right: 180px;
   top: 415px;
-  margin: ;
 }
 .squirrel-logo {
   position: absolute;
   height: 350px;
   width: 350px;
-  left: -100px;
-  top: 100px;
+  left: -140px;
+  top: 64px;
 }
 .video-player {
   position: relative;
@@ -225,7 +226,7 @@ top: 57px;
 }
 .block-forms {
   height: 700px;
-  background: url(http://localhost:8888/dennisbrotzky/img/forms-iphone.png) no-repeat center center;
+  background: url(http://localhost:8888/dennisbrotzky/img/forms_iphone.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -234,8 +235,28 @@ top: 57px;
   /*box-shadow:  inset 0px -150px 200px 0px rgba(0,0,0,0.2); */
   transition: all 600ms ease;
 }
+.codecore {
+  position: relative;
+  height: 100%;
+  padding: 50px 0px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #EDEDED;
+  border-top: 1px solid #EDEDED;
+}
+.codecore-mac {
+  position: relative;
+  width: 135%;
+  left: -250px;
+}
+.codecore-macbook {
+  position: absolute;
+  width: 55%;
+  top: 310px;
+  right: 50px;
+}
 .contact {
   padding: 50px 0px 15px 0px;
+  background:#F9F9F9;
 }
 .input-type {
   margin-left: 15px;
@@ -256,8 +277,7 @@ top: 57px;
   color: #336699;
 }
 .project-link:hover, .project-link:active {
-  color: #454e59;
-  text-decoration: underline;
+  color: #4C99E5;
 }
 
 footer {
@@ -372,7 +392,6 @@ footer {
 }
 .message:focus::-webkit-input-placeholder {
   color: rgba(0,0,0,0);
-
 }
 textarea {
   resize: none;
@@ -384,7 +403,8 @@ textarea {
     -ms-transform-origin: 50% 50% 0;
     -o-transform-origin: 50% 50% 0;
     -webkit-transform-origin: 50% 50% 0;
-    transform-origin: 50% 50% 0
+    transform-origin: 50% 50% 0;
+    background-color:#F9F9F9;
 }
 .text {
     position: relative;
@@ -1097,7 +1117,7 @@ figure {
     width: 15px;
     height: 56px;
     background-color: #666;
-    moz-transform: translatez(-43px);
+    -moz-transform: translatez(-43px);
     -ms-transform: translatez(-43px);
     -o-transform: translatez(-43px);
     -webkit-transform: translatez(-43px);
@@ -2223,8 +2243,12 @@ figure {
   }
 .reveal-control:active,
 .render-control:active {
+  color: #0D47A1;
   box-shadow: none;
     outline: none;
+  }
+  .button-active {
+    color: #0D47A1;
   }
 .coffee-mug {
   position: absolute;

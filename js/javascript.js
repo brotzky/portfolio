@@ -194,7 +194,7 @@ var playVideo = function() {
   setInterval(function() {
     if (userScrolled) {
       var video = document.getElementById("myVideo");
-       if (pageYOffset > 1500 && pageYOffset < 2000) {
+       if (pageYOffset > 1200 && pageYOffset < 2000) {
           // play video in pageYOffset region
           video.play();
         } else {
