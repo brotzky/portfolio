@@ -41,7 +41,7 @@ function moveScreen(e) {
 
 // ACTIVE TOGGLE FOR BUTTON SELECTION
 var buttonActive = function(){
-  $('button').click(function() {
+  $('.render-control, .reveal-control').click(function() {
     $(this).toggleClass('button-active');
     });
 }
