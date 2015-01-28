@@ -2209,46 +2209,44 @@ figure {
 .render-control {
   display: block;
   cursor: pointer;
-  padding: 8px 15px;
-  width: 70%;
-  margin: 20px auto -1px auto;
-  border-top-left-radius: 0.6em;
-  border-top-right-radius: 0.6em;
-  border:1px solid #A0A0A0;
-  background-color: transparent;
+  padding: 15px 10px;
+  width: 80%;
+  margin: 10px auto 10px auto;
+  border-radius: 2em;
+  border: 2px solid #4E4E4E;
+  border-right:2px solid red;
+  border-left:2px solid red;
+  background-color: #FFFFFF;
   outline: none;
+  font-size: 1em;
+  box-shadow: 0px 0px 0px rgba(240, 240, 240, 0.95);
   transition: all 350ms ease;
 }
 .rotate-control {
   display: block;
   cursor: pointer;
-  padding: 8px 15px;
-  width: 70%;
-  margin: 0px auto 0px auto;
-  border-bottom-left-radius: 0.6em;
-  border-bottom-right-radius: 0.6em;
-  border:1px solid #A0A0A0;
-  background-color: transparent;
+  padding: 15px 10px;
+  width: 80%;
+  margin: 20px auto 10px auto;
+  border-radius: 2em;
+  border: 2px solid #4E4E4E;
+  border-right:2px solid red;
+  border-left:2px solid red;
+  background-color: #FFFFFF;
   outline: none;
-  box-shadow: 0px 0px 0px #D0D0D0;
+  font-size: 1em;
+  box-shadow: none;
   transition: all 350ms ease;
 }
-.render-control:hover {
-    box-shadow: 0px 0px 4px #999999;
-     background-color: #FAFAFA;
-  }
-  .rotate-control:hover {
-    box-shadow: 0px  1px 5px #999999;
-     background-color: #FAFAFA;
-  }
 .reveal-control:active,
 .render-control:active {
-  color: #0D47A1;
-  box-shadow: none;
+    color: #388E3C;
     outline: none;
   }
   .button-active {
-    color: #0D47A1;
+    color: #388E3C;
+    border-right:2px solid #388E3C;
+  border-left:2px solid #388E3C;
   }
 .coffee-mug {
   position: absolute;
