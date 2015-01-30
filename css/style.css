@@ -17,13 +17,13 @@ html, body {
   font-family: "Lato","Helvetica Neue", Helvetica, sans-serif;
   word-spacing: 0.1em;
   border-top: 4px solid rgba(0,0,0,0.5);
-
 }
 .container {
   position: relative;
   max-width: 1280px;
   min-height: 100%;
   display: block;
+  overflow-x:hidden;
   margin: -30px auto;
   box-shadow: 0px 4px 5px rgba(213, 213, 213, 0.45);
   border-left: 1px solid #EDEDED;
@@ -58,7 +58,7 @@ header {
 	float: right;
 	color: rgba(0,0,0,0.4);
 	font-size: 1.1em;
-  text-decoration: none;
+     text-decoration: none;
 }
 .header-mailto {
   text-decoration: none;
@@ -109,18 +109,14 @@ header {
 	height: 100%;
 }
 .mcgill {
+  padding-bottom: 80px;
+  margin-top: -30px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #EDEDED;
 }
 .mcgill-image {
   background-color: #FFFFFF;
   border-bottom: 1px solid #EDEDED;
-}
-.mcgill-content {
-    margin: -35px auto 0px auto;
-    padding-bottom: 70px;
-  max-width: 580px;
-  height: 100%;
 }
 .block-content-about {
   margin: 30px auto;
@@ -173,15 +169,16 @@ height: 100%;
 }
 .squirrel-logo {
   position: absolute;
-  height: 350px;
-  width: 350px;
-  left: -140px;
-  top: 64px;
+  height: 225px;
+  width: 225px;
+  left: -60px;
+  top: 115px;
 }
 .video-player {
   position: relative;
   float: right;
   top: 0px;
+  margin: 0 auto;
   padding: 0px 25px;
 }
 .em-iphone {
@@ -200,7 +197,7 @@ top: 57px;
 .emcollective-writing {
   padding: 5px 0px;
   margin: 20px 0;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.6);
   font-size: 0.99em;
   vertical-align: bottom;
   line-height: 1.59em;
@@ -209,7 +206,7 @@ top: 57px;
   text-align: left;
   padding: 5px 0px;
   margin: 20px 0;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.6);
   font-size: 0.99em;
   vertical-align: bottom;
   line-height: 1.59em;
@@ -243,16 +240,20 @@ top: 57px;
   border-bottom: 1px solid #EDEDED;
   border-top: 1px solid #EDEDED;
 }
+.codecore-offset {
+  position: relative;
+  top: -350px;
+}
 .codecore-mac {
   position: relative;
   width: 135%;
   left: -250px;
 }
 .codecore-macbook {
-  position: absolute;
-  width: 55%;
-  top: 310px;
-  right: 50px;
+  position: relative;
+  width: 123%;
+  top: -406px;
+  right: -170px;
 }
 .contact {
   padding: 50px 0px 15px 0px;
@@ -271,6 +272,7 @@ top: 57px;
   top: 1px;
   text-decoration: none;
   color: #336699;
+  font-size: 1.2em;
   transition: all 50ms ease;
 }
 .fa-arrow-right {
@@ -319,7 +321,7 @@ footer {
   border-bottom: 3px solid rgba(0,0,0,0.5);
   outline: none;
   background-color: #F9F9F9;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.8);
   box-shadow: -3px 3px 0px rgba(0,0,0,0.2);
 
   font-family: 'Lato', sans-serif;
@@ -2238,7 +2240,7 @@ figure {
   box-shadow: none;
   transition: all 350ms ease;
 }
-.reveal-control:active,
+.rotate-control:active,
 .render-control:active {
     color: #388E3C;
     outline: none;
@@ -2246,7 +2248,7 @@ figure {
   .button-active {
     color: #388E3C;
     border-right:2px solid #388E3C;
-  border-left:2px solid #388E3C;
+    border-left:2px solid #388E3C;
   }
 .coffee-mug {
   position: absolute;
@@ -2296,3 +2298,194 @@ figure {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+
+
+@media screen and (max-width: 1200px){
+  .introduction {
+    background-color: red;
+    }
+    .coffee-mug {
+      right: -30px;
+      height: 200px;
+      width: 200px;
+    }
+    .writing-book {
+      top: 370px;
+      left: -250px;
+      height: 300px;
+    }
+    .pencil {
+      top: 100px;
+      right: -60px;
+    }
+    .post-it {
+      right: -20px;
+    }
+    .ruler {
+      left: 0px;
+      height: 90px;
+    }
+  }
+  @media screen and (max-width: 900px){
+    .container {
+      overflow-x: hidden;
+    }
+    .coffee-mug {
+      right: -70px;
+      height: 130px;
+      width: 200px;
+    }
+    .writing-book {
+      top: 400px;
+      left: -290px;
+      height: 300px;
+    }
+    .pencil {
+      height: 130px;
+      top: 150px;
+      right: -60px;
+    }
+    .post-it {
+      top: 500px;
+      height: 180px;
+      right: -20px;
+    }
+    .ruler {
+      left: -140px;
+      height: 90px;
+    }
+    .block-mcgill {
+      height: 700px;
+    }
+    .introduction {
+    background-color: orange;
+    }
+  }
+  @media screen and (max-width: 720px){
+    .block-content {
+      margin: 5px auto;
+      max-width: 88%;
+      height: 100%;
+    }
+    .block-content-about {
+      padding-top: 19px;
+      max-width: 88%;
+      height: 100%;
+    }
+    .header {
+      margin: 10px auto 5px auto;
+    }
+     .header-right {
+      display: block;
+      float: none;
+      margin: 4px 0px;
+      color: rgba(0,0,0,0.4);
+      font-size: 1.1em;
+     text-decoration: none;
+     font-style: italic;
+    }
+    .header-left {
+      display: block;
+    }
+    .coffee-mug {
+      right: -20px;
+      height: 130px;
+      width: 200px;
+    }
+    .writing-book {
+      top: 720px;
+      left: -190px;
+      height: 180px;
+    }
+    .pencil {
+      height: 130px;
+      top: 320px;
+      right: -160px;
+    }
+    .post-it {
+      top: 770px;
+      height: 180px;
+      right: -20px;
+    }
+    .ruler {
+      left: -140px;
+      height: 90px;
+    }
+    .squirrel-logo {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      top: 20px;
+      left: 0;
+    }
+    .em-imac {
+      position: relative;
+      width: 130%;
+      top: -20px;
+      right: -90px;
+    }
+    .em-macbook {
+      position: relative;
+      width: 120%;
+      right: 192px;
+      top: -280px;
+    }
+    .block-emcollective {
+      top: -270px;
+    }
+    .block-mcgill {
+      height: 800px;
+      padding: 30px 0px;
+      margin: 0;
+      background:  url(http://localhost:8888/dennisbrotzky/img/mcgill-snow-720.jpg) no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .dennis-brotzky-forms {
+      top: -80px;
+      left: 0px;
+   }
+   .animation-controls {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      margin: -10px 0px 50px 0px;
+    }
+   .fieldset {
+      padding: 15px 5px 30px 5px;
+      width: 100%;
+    }
+    .first:focus::-webkit-input-placeholder {
+      color: rgba(0,0,0,0);
+      left: 0;
+    }
+    .email:focus::-webkit-input-placeholder {
+      color: rgba(0,0,0,0.0);
+      left:0;
+    }
+    .message:focus::-webkit-input-placeholder {
+      color: rgba(0,0,0,0);
+    }
+    .introduction {
+    background-color: yellow;
+    }
+  }
+  @media screen and (max-width: 600px){
+    .introduction {
+    background-color: yellow;
+    }
+  }
+
+  /* iPhone 4S and similar */
+  @media screen and (max-width: 320px){
+    .introduction {
+    background-color: green;
+    }
+    .coffee-mug {
+    right: -40px;
+    }
+  }

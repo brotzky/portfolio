@@ -41,7 +41,7 @@ function moveScreen(e) {
 
 // ACTIVE TOGGLE FOR BUTTON SELECTION
 var buttonActive = function(){
-  $('.render-control, .reveal-control').click(function() {
+  $('.render-control, .rotate-control').click(function() {
     $(this).toggleClass('button-active');
     });
 }
@@ -110,6 +110,7 @@ var heartReveal = function(){
   var frontPanel = $('.front-panel');
     // Body-Back translate
   $('.stage').mouseenter(function()  {
+    // Use textIndent as dummy property
     bodyBack.animate({  textIndent: -200 }, {
       step: function(now,fx) {
         $(this).css('-webkit-transform','translateZ('+now+'px)');
@@ -125,12 +126,11 @@ var heartReveal = function(){
         },
       duration:'slow'
     },'linear');
-});
-
-      // On Off Button on Back Translate
-      $('.stage').mouseenter(function()  {
-      onOff.animate({  overFlow: -203 }, {
-          step: function(now,fx) {
+  });
+ // On Off Button on Back Translate
+  $('.stage').mouseenter(function()  {
+  onOff.animate({  overFlow: -203 }, {
+            step: function(now,fx) {
             $(this).css('-webkit-transform','translateZ('+now+'px)','-webkit-transform','rotateY('+180+'deg)');
             $(this).css('-moz-transform','translateZ('+now+'px)','-moz-transform','rotateY('+180+'deg)');
             $(this).css('-ms-transform','translateZ('+now+'px)','-ms-transform','rotateY('+180+'deg)');
@@ -194,7 +194,7 @@ var playVideo = function() {
   setInterval(function() {
     if (userScrolled) {
       var video = document.getElementById("myVideo");
-       if (pageYOffset > 1200 && pageYOffset < 2000) {
+       if (pageYOffset > 1100 && pageYOffset < 2000) {
           // play video in pageYOffset region
           video.play();
         } else {
