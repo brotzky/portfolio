@@ -24,9 +24,8 @@ html, body {
   min-height: 100%;
   display: block;
   margin: -30px auto;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
-
-
+  -webkit-box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.2);
 }
 .icon {
   margin:  10px 12px 30px 12px;
@@ -137,7 +136,7 @@ height: 100%;
 .block-mcgill {
   height: 900px;
   padding: 30px 0px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   background:  url(http://localhost:8888/dennisbrotzky/img/mcgill-snow-long-arrow2.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -2445,7 +2444,6 @@ figure {
   }
   @media screen and (max-width: 720px){
     .block-content {
-      margin: 5px auto;
       max-width: 88%;
       height: 100%;
     }
@@ -2509,7 +2507,6 @@ figure {
       top: 20px;
       left: 0;
     }
-
     .em-imac {
       position: relative;
       width: 130%;
@@ -2523,7 +2520,7 @@ figure {
       top: -320px;
     }
     .block-emcollective {
-      height: 800px;
+      height: 700px;
       top: -285px;
     }
     .block-mcgill {
@@ -2662,8 +2659,13 @@ figure {
     .post-it {
       top: 800px;
     }
-     .block-emcollective {
-      height: 1280px;
+    .block-emcollective {
+      height: 1200px;
+    }
+    .codecore-macbook{
+      width: 425px;
+      right: -165px;
+      top: 185px;
     }
 }
   /* iPhone 4S and similar */
