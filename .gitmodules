@@ -7,3 +7,6 @@
 [submodule "CodeCore"]
         path = CodeCore
         url = https://github.com/brotzky/codecore.git
+[submodule "demosite"]
+        path = demosite
+        url = https://github.com/brotzky/demosite.git
