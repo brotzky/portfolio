@@ -218,15 +218,15 @@ var formSubmission = function() {
     var email = $("#email").val();
     var message = $("#message").val();
     var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
-    console.log(dataString);
 
-    $.ajax({
+
+    if((name != "") && (email != "") && (message != "")) {
+      $.ajax({
         type:'POST',
         url: 'php/contact.php',
         data: dataString,
         success: function(msg) {
-            console.log('Email Sent');
-
+            button.css( "background-image", "none");
             button.animate({
               backgroundColor: "#43A047",
               color: "#fff",
@@ -238,6 +238,7 @@ var formSubmission = function() {
             response.fadeIn('slow').html('Thank you, ' + name + ', I will respond shortly.');
         },
         error:  function(xhr, status, error) {
+          button.css( "background-image", "none");
           button.animate({
               backgroundColor: "#CD4435",
               color: "#fff",
@@ -249,6 +250,12 @@ var formSubmission = function() {
           response.fadeIn('slow').html('Sorry, ' + name + ', there was an error. Please email <a class="header-mailto" href="mailto:brotzky@gmail.com?Subject=Form%20error" target="_top">brotzky@gmail.com</a>.');
         }
       });
+
+    } else {
+      $('input, textarea').addClass('color');
+    }
+
+
   });
 }
 // RUN FUNCTIONS WHEN DOCUMENT LOADED

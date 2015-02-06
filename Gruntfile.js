@@ -4,36 +4,43 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
-        javascript_watch: {
-            files: 'js/jquery.js',
-		tasks: 'uglify'
+        uglify_watch: {
+            files: ['js/javascript.js'],
+		tasks: ['uglify'],
+            options: {
+              spawn: false,
+            },
         },
-        css_watch: {
-          	files: 'css/style.css',
-		tasks: 'cssmin'
-        }
+        cssmin_watch: {
+          	files: ['css/style.css'],
+		tasks: ['cssmin'],
+            options: {
+              spawn: false,
+            },
+        },
     },
     uglify: {
       build: {
-        src: ['js/jquery.js', 'js/music-app.js'], // source files mask
+        src: ['js/javascript.js'], // source files mask
             dest: 'js/build/',    // destination folder
             expand: true,    // allow dynamic building
             flatten: true,   // remove all unnecessary nesting
-            ext: 'javascript.min.js'   // replace .js to .min.js
+            ext: '.min.js'   // replace .js to .min.js
       }
     },
     cssmin: {
-       my_target: {
-            src: 'style.css',
+        my_target: {
+            src: ['css/style.css'],
             dest: 'css/build/style.min.css'
-            }
         }
+      }
   });
 
   grunt.loadNpmTasks('grunt-install-dependencies');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
 
   // Default task(s).

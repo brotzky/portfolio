@@ -5,9 +5,6 @@
     $message = $_POST["message"];
 
     $dataString = "Name: ". $name.", "."Email: ".$email.", "."Message: ".$message;
-    echo $dataString;
-
-    var_dump($_POST);
 
     // TODO: Send Email
 
