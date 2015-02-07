@@ -110,7 +110,7 @@ header {
 .introduction {
   padding-bottom: 80px;
   background:#F9F9F9;
-  background-image: url(http://localhost:8888/dennisbrotzky/img/ebay-background.jpg);
+  background-image: url(http://dennisbrotzky.me/img/ebay-background.jpg);
 }
 .block-content {
 	margin: 0 auto;
@@ -137,7 +137,7 @@ height: 100%;
   height: 900px;
   padding: 30px 0px;
   margin-bottom: 25px;
-  background:  url(http://localhost:8888/dennisbrotzky/img/mcgill-snow-long-arrow2.jpg) no-repeat center center;
+  background:  url(http://dennisbrotzky.me/img/mcgill-snow-long-arrow2.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -223,7 +223,7 @@ top: 57px;
 }
 .myriad {
   height: 1000px;
-  background: url(http://localhost:8888/dennisbrotzky/img/florian-myriad.jpg) no-repeat center center;
+  background: url(http://dennisbrotzky.me/img/florian-myriad.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -295,7 +295,7 @@ top: 57px;
 }
 .block-forms {
   height: 700px;
-  background: url(http://localhost:8888/dennisbrotzky/img/forms_iphone.png) no-repeat center center;
+  background: url(http://dennisbrotzky.me/dennisbrotzky/img/forms_iphone.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -330,7 +330,7 @@ top: 57px;
 .contact {
   padding: 50px 0px 15px 0px;
   background:#F9F9F9;
-  background-image: url(http://localhost:8888/dennisbrotzky/img/ebay-background.jpg);
+  background-image: url(http://dennisbrotzky.me/img/ebay-background.jpg);
 }
 .input-type {
   margin-left: 15px;
@@ -381,7 +381,7 @@ footer {
   margin: 0 auto;
   padding: 15px 20px 30px 20px;
   background-color: #F9F9F9;
-  background-image: url(http://localhost:8888/dennisbrotzky/img/ebay-background.jpg);
+  background-image: url(http://dennisbrotzky.me/img/ebay-background.jpg);
   width: 80%;
   border: none;
 }
@@ -397,7 +397,7 @@ footer {
   border-bottom: 3px solid rgba(0,0,0,0.5);
   outline: none;
   background-color: #F9F9F9;
-  background-image: url(http://localhost:8888/dennisbrotzky/img/ebay-background.jpg);
+  background-image: url(http://dennisbrotzky.me/img/ebay-background.jpg);
   color: rgba(0,0,0,0.8);
   box-shadow: -3px 3px 0px rgba(0,0,0,0.2);
 
@@ -423,7 +423,7 @@ footer {
   padding: 10px 20px 10px 20px;
   color: rgba(0,0,0,0.5);
   background-color: #F9F9F9;
-  background-image: url(http://localhost:8888/dennisbrotzky/img/ebay-background.jpg);
+  background-image: url(http://dennisbrotzky.me/img/ebay-background.jpg);
   border: 2px solid rgba(0,0,0,0.5);
 
   outline: none;
@@ -2532,7 +2532,7 @@ figure {
       height: 800px;
       padding: 30px 0px;
       margin: 0;
-      background:  url(http://localhost:8888/dennisbrotzky/img/mcgill-snow-720.jpg) no-repeat center center;
+      background:  url(http://dennisbrotzky.me/img/mcgill-snow-720.jpg) no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
