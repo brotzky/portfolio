@@ -1,6 +1,6 @@
 <pre><?php
 ini_set('display_errors', 1);
-
+print_r(apache_get_modules());
 
   error_reporting(E_ALL);
   ini_set('display_errors', 1);

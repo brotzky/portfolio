@@ -7,31 +7,83 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
 RewriteRule (.*)$ /$1/ [R=301,L]
 
+RewriteCond %{REQUEST_URI} /+[^\.]+$
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
-ExpiresActive On
-ExpiresByType image/svg "access 1 month"
-ExpiresByType image/jpg "access 1 month"
-ExpiresByType image/jpeg "access 1 month"
-ExpiresByType image/gif "access 1 month"
-ExpiresByType image/png "access 1 month"
-ExpiresByType text/css "access 1 month"
-ExpiresByType text/html "access 1 month"
-ExpiresByType application/pdf "access 1 month"
-ExpiresByType text/x-javascript "access 1 month"
-ExpiresByType application/x-shockwave-flash "access 1 month"
-ExpiresByType image/x-icon "access 1 year"
-ExpiresDefault "access 1 month"
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+    ExpiresByType text/css                              "access plus 1 year"
+
+  # Data interchange
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Favicon (cannot be renamed!)
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # HTML components (HTCs)
+    ExpiresByType text/x-component                      "access plus 1 month"
+
+  # HTML
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+  # JavaScript
+    ExpiresByType application/javascript                "access plus 1 year"
+
+  # Manifest files
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+  # Media
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/svg                             "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+  # Web feeds
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+  # Web fonts
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+    ExpiresByType font/opentype                         "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
 </IfModule>
 
-# Expires is set to a point we won't reach,
-# Cache control will trigger first, 10 days after access
-# 10 Days = 60s x 60m x 24hrs x 10days =  864,000
-<FilesMatch "\.(webm|ogg|mp4)$">
-Header set Expires "Mon, 27 Mar 2038 13:33:37 GMT"
-Header set Cache-Control "max-age=864000"
-</FilesMatch>
-AddType video/webm .webm
-## EXPIRES CACHING ##≈
+<ifModule mod_headers.c>
+# Turn on Expires and set default expires to 3 days
+ExpiresActive On
+ExpiresDefault A259200
+
+# Set up caching on media files for 1 month
+<filesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf|swf|mov|mp3|wmv|ppt)$">
+ExpiresDefault A2419200
+Header append Cache-Control "public"
+</filesMatch>
+
+# Set up 2 Hour caching on commonly updated files
+<filesMatch ".(xml|txt|html|js|css)$">
+ExpiresDefault A7200
+Header append Cache-Control "private, must-revalidate"
+</filesMatch>
+
+# Force no caching for dynamic files
+<filesMatch ".(php|cgi|pl|htm)$">
+ExpiresDefault A0
+Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+Header set Pragma "no-cache"
+</filesMatch>
+</ifModule>
 
 ini_set('display_errors', 1);
