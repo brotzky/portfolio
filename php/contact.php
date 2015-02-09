@@ -1,10 +1,16 @@
-<?php
+<pre><?php
+ini_set('display_errors', 1);
 
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $message = $_POST["message"];
 
-    $dataString = "Name: ". $name.", "."Email: ".$email.", "."Message: ".$message;
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+
+  $name = isset($_POST['name']) ? $_POST['name'] : '';
+  $email = isset($_POST['email']) ? $_POST['email'] : '';
+  $message = isset($_POST['message']) ? $_POST['message'] : '';
+
+
+  echo $dataString = "Name: ". $name.", "."Email: ".$email.", "."Message: ".$message;
 
     // TODO: Send Email
 
@@ -13,10 +19,12 @@
       $from = $_POST['email'];
       $name = $_POST['name'];
       $subject = "Form submission";
-      $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+      $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
 
       $headers = "From: " . $from;
 
       mail($to,$subject,$message,$headers);
+
     }
-?>
+
+?></pre>
