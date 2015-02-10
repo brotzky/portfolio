@@ -2657,10 +2657,10 @@ figure {
   }
 @media screen and (max-width: 375px){
   .writing-book {
-      top: 725px;
+      top: 760px;
     }
     .post-it {
-      top: 800px;
+      top: 810px;
     }
     .block-emcollective {
       height: 1200px;
