@@ -2340,7 +2340,7 @@ figure {
 }
 .writing-book {
   position: absolute;
-  top: 300px;
+  top: 345px;
   left: -200px;
   height: 380px;
    -moz-transform: rotate(45deg);
@@ -2648,6 +2648,12 @@ figure {
     }
   }
   @media screen and (max-width: 414px){
+    .writing-book {
+      top: 770px;
+    }
+    .post-it {
+      top: 810px;
+    }
     .codecore-macbook {
       width: 485px;
       top: 220px;
@@ -2657,7 +2663,7 @@ figure {
   }
 @media screen and (max-width: 375px){
   .writing-book {
-      top: 760px;
+      top: 770px;
     }
     .post-it {
       top: 810px;
