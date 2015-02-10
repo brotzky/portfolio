@@ -12,10 +12,9 @@ var loadweather = function() {
           var intTemp = parseInt(json.currently.temperature )
           var celcius = Math.round((intTemp - 32)*(5/9));
           var conditions = json.currently.summary;
-          $('.mtlTemp').html(celcius + "&deg with " + conditions +". ");
+          $('.mtlTemp').html(celcius + "&deg, " + conditions);
         },
 
-        // IDEA --> GRACEFUL DEGREDATIONS IF API FAILS. load entire insert at end of para so it's not noticeable.
 
         erroer: function(e){
           console.log(e.message);
