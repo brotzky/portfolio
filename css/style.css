@@ -89,6 +89,7 @@ header {
       font-weight: 400;
       text-shadow: 1px 1px #e0e0e0;
 }
+
 .content-writing {
 	padding: 5px 0px;
 	margin: 20px 0;
@@ -260,6 +261,9 @@ top: 57px;
   font-size: 1rem;
   vertical-align: bottom;
   line-height: 1.625;
+}
+.source {
+  opacity: 0.4;
 }
 .myriad-writing > a {
   text-decoration: none;
