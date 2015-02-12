@@ -65,6 +65,7 @@ var rotateRobot = function(){
       return v === 'paused' ? 'running' : 'paused';
     });
       $('body').toggleClass('paused', $(this).css(playState) === 'paused');
+      $('body').toggleClass('paused', $(this).css(playStateWebkit) === 'paused');
       $('body').toggleClass('paused', $(this).css(playStateMoz) === 'paused');
       $('body').toggleClass('paused', $(this).css(playStateMs) === 'paused');
       $('body').toggleClass('paused', $(this).css(playStateO) === 'paused');
