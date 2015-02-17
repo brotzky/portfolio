@@ -10,3 +10,6 @@
 [submodule "demosite"]
         path = demosite
         url = https://github.com/brotzky/demosite.git
+[submodule "material"]
+        path = resume
+        url = https://github.com/brotzky/material.git
