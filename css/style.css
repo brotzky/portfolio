@@ -2420,6 +2420,50 @@ figure {
   background-size: cover;
 }
 /*===============================================
+                              RESUME  STYLES
+===============================================*/
+
+@media all and (min-width: 900px) {
+  .resume-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.06);
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0.6;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+  }
+  .resume-container:hover {
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
+  }
+  .resume-container > a {
+    padding: 5px 8px;
+    text-decoration: none;
+    color: #4e4e4e;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+  }
+  .resume-container > a:hover {
+    color: black;
+    text-decoration: underline;
+  }
+}
+@media all and (max-width: 720px){
+  .resume-container {
+    display: none;
+  }
+}
+/*===============================================
                               FOOTER  STYLES
 ===============================================*/
 footer {
