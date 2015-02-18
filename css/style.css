@@ -2441,17 +2441,18 @@ figure {
     transition: all 250ms ease;
   }
   .resume-container:hover {
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.15);
+    opacity: 1;
   }
   .resume-container > a {
     padding: 5px 8px;
     text-decoration: none;
     color: #4e4e4e;
-    -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -ms-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
+    -webkit-transition: all 350ms ease;
+    -moz-transition: all 350ms ease;
+    -ms-transition: all 350ms ease;
+    -o-transition: all 350ms ease;
+    transition: all 350ms ease;
   }
   .resume-container > a:hover {
     color: black;
