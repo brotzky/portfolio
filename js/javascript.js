@@ -16,7 +16,7 @@ var loadweather = function() {
         },
 
 
-        erroer: function(e){
+        error: function(e){
           console.log(e.message);
         }
     });
