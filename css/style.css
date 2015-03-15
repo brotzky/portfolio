@@ -2440,10 +2440,12 @@ figure {
     -o-transition: all 250ms ease;
     transition: all 250ms ease;
   }
+   .blog-container:hover,
   .resume-container:hover {
-    box-shadow: 0px 4px 9px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.15);
     opacity: 1;
   }
+   .blog-container > a,
   .resume-container > a {
     padding: 5px 8px;
     text-decoration: none;
@@ -2454,16 +2456,38 @@ figure {
     -o-transition: all 350ms ease;
     transition: all 350ms ease;
   }
+   .blog-container > a:hover,
   .resume-container > a:hover {
     color: black;
     text-decoration: underline;
   }
 }
 @media all and (max-width: 720px){
+  .blog-container,
   .resume-container {
     display: none;
   }
 }
+/*===============================================
+                              BLOG  STYLES
+===============================================*/
+@media all and (min-width: 900px) {
+  .blog-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.06);
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0.6;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+  }
 /*===============================================
                               FOOTER  STYLES
 ===============================================*/
