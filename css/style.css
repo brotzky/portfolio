@@ -1,3 +1,4 @@
+
 /*
 *  ____________ Dennis Brotzky's Portfolio _______________
 *
@@ -7,11 +8,10 @@
 *                    Content styling
 *                    First --> Introduction
 *                    Last --> Contac/Footer
-*                    BOTTOM --> Media Queries from largest to 320px
+*                    Bottom --> Media Queries from largest to 320px
 *
-*/
-
-/*===============================================
+*
+===============================================
                               UNIVERSAL STYLES
 ===============================================*/
 
@@ -2488,6 +2488,7 @@ figure {
     -o-transition: all 250ms ease;
     transition: all 250ms ease;
   }
+}
 /*===============================================
                               FOOTER  STYLES
 ===============================================*/
@@ -2513,7 +2514,7 @@ footer {
 /*===============================================
                       1200 STYLES (largets Media Query)
 ===============================================*/
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
   .container {
       overflow-x: hidden;
     }
@@ -2540,8 +2541,7 @@ footer {
     }
   }
 /*===============================================
-                              1024 STYLES
-                              iPad, Tablets, etc
+                              1024 STYLES iPad, Tablets, etc
 ===============================================*/
 @media screen and (max-width: 1024px){
   .codecore-macbook {
