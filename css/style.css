@@ -60,12 +60,20 @@ html, body {
 	position: relative;
 	top: 30px;
 }
+.project-link-container {
+  display: inline;
+  padding: 6px 12px;
+  border: 1px solid #369;
+  border-radius: 4px;
+}
+
 .project-link {
   position: relative;
   top: 1px;
   text-decoration: none;
   color: #336699;
   font-size: 1.125em;
+  padding: 7px 5px;
   transition: all 200ms ease-out;
 }
 .fa-arrow-right {
