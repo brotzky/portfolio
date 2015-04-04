@@ -60,31 +60,40 @@ html, body {
 	position: relative;
 	top: 30px;
 }
-.project-link-container {
-  display: inline;
-  padding: 6px 12px;
-  border: 1px solid #369;
-  border-radius: 4px;
-}
 
-.project-link {
+.project-link-container  {
   position: relative;
+  display: inline;
   top: 1px;
   text-decoration: none;
   color: #336699;
   font-size: 1.125em;
-  padding: 7px 5px;
-  transition: all 200ms ease-out;
+  padding: 6px 15px 6px 18px;
+  border: 1px solid rgba(51, 102, 153, 0.72);
+  border-radius: 4px;
+  -webkit-transition: all 200ms ease-out;
+  -moz-transition:    all 200ms ease-out;
+  -o-transition:         all 200ms ease-out;
+  transition:             all 200ms ease-out;
 }
 .fa-arrow-right {
+  position: relative;
+  left: -5px;
   color: #336699;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition:    all 300ms ease-out;
+  -o-transition:         all 300ms ease-out;
+  transition:             all 300ms ease-out;
 }
 .light-blue {
   color: #4C99E5;
 }
 .project-link:hover, .project-link:active {
-  color: #4C99E5;
+  color: #fff;
+  background-color: #369;
 }
+
+.project-link-container:hover .fa-arrow-right { color: #fff; left: 1px;}
 /*===============================================
                               HEADER STYLES
 ===============================================*/
@@ -2321,10 +2330,6 @@ figure {
   100% { -webkit-transform: rotateY(360deg); }
 }
 @-moz-keyframes rotateRight {
-  0% { -webkit-transform: rotateY(0); }
-  100% { -webkit-transform: rotateY(360deg); }
-}
-@-ms-keyframes rotateRight {
   0% { -webkit-transform: rotateY(0); }
   100% { -webkit-transform: rotateY(360deg); }
 }
