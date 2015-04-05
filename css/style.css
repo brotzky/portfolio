@@ -94,6 +94,14 @@ html, body {
 }
 
 .project-link-container:hover .fa-arrow-right { color: #fff; left: 1px;}
+
+.lighter-project-link {
+  color: #6C9DCE;
+  border-color: #6C9DCE;
+}
+.lighter-project-link:hover {
+  border-color: #336699;
+}
 /*===============================================
                               HEADER STYLES
 ===============================================*/
