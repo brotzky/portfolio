@@ -21,6 +21,33 @@ var loadweather = function() {
         }
     });
   }
+
+
+    var dropDown = function() {
+
+      var userScrolled = false;
+      var fixedNav = $('nav');
+
+      $(window).scroll(function() {
+        userScrolled = true;
+      });
+
+      setInterval(function() {
+      if (userScrolled) {
+        if (!($(this).scrollTop() < 500) && $(window).width() >= 769) {
+          if (!fixedNav.hasClass('show')) {
+            fixedNav.addClass('show');
+            }
+          } else {
+            if ($(this).scrollTop() < 500  && $(window).width() >= 769) {
+              fixedNav.removeClass('show');
+            }
+          }
+        userScrolled = false;
+      }
+    }, 400);
+    // 500ms delay on scroll event
+  }
 // MOVE SCREEN WITH KEYBOARD
 function moveScreen(e) {
     e = e || window.event;
@@ -261,6 +288,7 @@ var formSubmission = function() {
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
 $(document).ready(function(){
   loadweather();
+  dropDown();
   moveScreen();
   buttonActive();
   renderRobot();
