@@ -107,20 +107,20 @@ nav {
   z-index: 99999;
   position: fixed;
   top: -60px;
+  left: 0;
+  width: 100%;
   -webkit-transition: all 400ms ease-out;
   -moz-transition:    all 400ms ease-out;
   -o-transition:         all 400ms ease-out;
   transition:             all 400ms ease-out;
 }
-
 nav ul {
-   position: fixed;
   margin: 0;
   padding: 0;
   height: 45px;
   width: 100%;
-  background-color: #fff;
   opacity: 0.9;
+  background-color: #fff;
   box-shadow: 0px 1px 4px rgba(0,0,0,0.16);
 
 }
@@ -128,7 +128,7 @@ nav ul li {
   display: inline-block;
   float: right;
   padding: 12px 0px;
-  color: white;
+  color: #fff;
 }
 nav ul li:first-child {
   margin-right: 10px;
@@ -136,9 +136,9 @@ nav ul li:first-child {
 nav ul li a {
   padding: 12px;
   color: #CD4435;
+  opacity: 1;
   text-transform: uppercase;
   text-decoration: none;
-  opacity: 1;
   box-shadow: none;
   -webkit-transition: all 175ms ease;
   -moz-transition:    all 175ms ease;
@@ -148,9 +148,9 @@ nav ul li a {
 nav ul li a:hover {
   box-shadow: inset 0px 3px 0px #CD4435;
 }
-
 .show {
   top: 0px;
+  left: 0;
 }
 /*===============================================
                               HEADER STYLES
