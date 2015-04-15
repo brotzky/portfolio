@@ -61,6 +61,7 @@ html, body {
 	top: 30px;
 }
 .project-link-container  {
+  z-index: 99999;
   position: relative;
   display: inline;
   top: 18px;
