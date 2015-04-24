@@ -603,8 +603,7 @@ height: 100%;
   left: -65px;
 }
 .message:focus::-webkit-input-placeholder {
-  color: rgba(0,0,0,0.2);
-  left: -165px;
+  color: rgba(0,0,0,0.0);
 }
 textarea {
   resize: none;
