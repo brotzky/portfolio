@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             },
         },
         cssmin_watch: {
-          	files: ['css/style.css'],
+          	files: ['css/font-awesome.min.css', 'css/style.css'],
 		tasks: ['cssmin'],
             options: {
               spawn: false,
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     },
     cssmin: {
         my_target: {
-            src: ['css/style.css'],
+            src: ['css/font-awesome.min.css', 'css/style.css'],
             dest: 'css/build/style.min.css'
         }
       }

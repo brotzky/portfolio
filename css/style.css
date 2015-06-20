@@ -471,7 +471,7 @@ height: 100%;
 .codecore {
   position: relative;
   height: 100%;
-  padding: 50px 0px;
+  padding: 85px 0px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #EDEDED;
   border-top: 1px solid #EDEDED;
@@ -616,6 +616,7 @@ textarea {
 ===============================================*/
 .css-drawing {
     position: relative;
+    padding: 40px 0px;
     background:  -webkit- radial-gradient(circle, #FFFFFF , #F7F7F7);
     -moz-transform-origin: 50% 50% 0;
     -ms-transform-origin: 50% 50% 0;
@@ -2336,6 +2337,7 @@ figure {
 
 .heart {
     position: absolute;
+    z-index: 0;
     width: 100px;
     height: 90px;
     top: 70px;
