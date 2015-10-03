@@ -377,7 +377,7 @@ height: 100%;
 .myriad {
   height: 900px;
   padding-top: 25px;
-  background: url(http://dennisbrotzky.me/img/florian-myriad.jpg) no-repeat center center;
+  background: no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -468,7 +468,7 @@ height: 100%;
 }
 .block-forms {
   height: 700px;
-  background: url(http://dennisbrotzky.me/img/forms_iphone.png) no-repeat center center;
+  background: no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2500,7 +2500,7 @@ figure {
   height: 900px;
   padding: 30px 0px;
   margin-bottom: 25px;
-  background:  url(http://dennisbrotzky.me/img/mcgill-snow-long-arrow2.jpg) no-repeat center center;
+  background: no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
