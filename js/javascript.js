@@ -52,6 +52,20 @@ $.extend($.lazyLoadXT, {
 //     });
 //   }
 
+    (function() {
+        var hamburgerMenu   = $('.nav-hamburger');
+        var hamburgerTop      = $('.nav-top');
+        var hamburgerMiddle  = $('.nav-middle');
+        var hamburgerBottom = $('.nav-bottom');
+        var fixedNav = $('nav');
+
+        hamburgerMenu.on('click', function() {
+            hamburgerTop.toggleClass('nav-top-active');
+            hamburgerMiddle.toggleClass('nav-middle-active');
+            hamburgerBottom.toggleClass('nav-bottom-active');
+            fixedNav.toggleClass('show');
+        });
+    }());
 
     var dropDown = function() {
 
@@ -318,7 +332,7 @@ var formSubmission = function() {
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
 $(document).ready(function(){
   // loadweather();
-  dropDown();
+  // dropDown();
   moveScreen();
   buttonActive();
   renderRobot();
