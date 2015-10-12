@@ -95,22 +95,6 @@ $.extend($.lazyLoadXT, {
     }, 400);
     // 500ms delay on scroll event
   }
-// MOVE SCREEN WITH KEYBOARD
-function moveScreen(e) {
-    e = e || window.event;
-    if (e.keyCode == '38') {
-
-    }
-    else if (e.keyCode == '40') {
-        // down arrow
-    }
-    else if (e.keyCode == '37') {
-       // left arrow
-    }
-    else if (e.keyCode == '39') {
-       // right arrow
-    }
-}
 
 // ACTIVE TOGGLE FOR BUTTON SELECTION
 var buttonActive = function(){
@@ -272,7 +256,7 @@ var playVideo = function() {
 
     	console.log(pageYOffset);
 
-    	if (pageYOffset > 720) {
+    	if (pageYOffset > 690) {
     	   $('.mrt-img').addClass('mrt-active');
     	   $('.mrt-shadow').addClass('mrt-active');
     	 } else {
@@ -350,7 +334,6 @@ var formSubmission = function() {
 $(document).ready(function(){
   // loadweather();
   // dropDown();
-  moveScreen();
   buttonActive();
   renderRobot();
   rotateRobot();
