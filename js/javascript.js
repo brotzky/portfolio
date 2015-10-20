@@ -26,7 +26,7 @@ $(document).on('lazyshow', function (e) {
 });
 
 $.extend($.lazyLoadXT, {
-  edgeY:  350
+  edgeY:  400
 });
 })(window.jQuery || window.Zepto || window.$);
 
@@ -254,15 +254,7 @@ var playVideo = function() {
   setInterval(function() {
     if (userScrolled) {
 
-    	console.log(pageYOffset);
 
-    	if (pageYOffset > 690) {
-    	   $('.mrt-img').addClass('mrt-active');
-    	   $('.mrt-shadow').addClass('mrt-active');
-    	 } else {
-    	   $('.mrt-img').removeClass('mrt-active');
-    	   $('.mrt-shadow').removeClass('mrt-active');
-    	 }
 
       var video = document.getElementById("myVideo");
 

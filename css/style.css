@@ -196,13 +196,13 @@ nav ul li a:hover {
 }
 
 .nav-top {
-    top: 18px;
+    top: 17px;
 }
 .nav-middle {
-    top: 25px;
+    top: 24px;
 }
 .nav-bottom {
-    top: 32px;
+    top: 31px;
 }
 
 .nav-top-active {
@@ -2760,7 +2760,20 @@ footer {
     font-weight: 300;
     margin: 15px auto 10px auto;
   }
-
+/*===============================================
+                              LAZY LOAD
+===============================================*/
+.lazy-hidden {
+    opacity: 0;
+}
+.lazy-loaded {
+    -webkit-transition: opacity 222ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    -moz-transition: opacity 222ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    -ms-transition: opacity 222ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    -o-transition: opacity 222ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: opacity 222ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    opacity: 1;
+}
 /*===============================================
                       1200 STYLES (largets Media Query)
 ===============================================*/
