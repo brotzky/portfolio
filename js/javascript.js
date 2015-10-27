@@ -30,6 +30,12 @@ $.extend($.lazyLoadXT, {
 });
 })(window.jQuery || window.Zepto || window.$);
 
+// For HI-DPI Images
+(function($, dpr) {
+  if (dpr>1)
+    $.lazyLoadXT.srcAttr = 'data-src-' + (dpr > 2 ? '2x' : (dpr > 1.5 ? '2x' : '1.5x'));
+})(jQuery, window.devicePixelRatio || 1);
+
 
 // WEATHER API
 // var loadweather = function() {
@@ -81,14 +87,16 @@ $.extend($.lazyLoadXT, {
 
       setInterval(function() {
       if (userScrolled) {
-        if (!($(this).scrollTop() < 500) && $(window).width() >= 769) {
-          if (!fixedNav.hasClass('show')) {
-            fixedNav.addClass('show');
-            }
+        if (!($(this).scrollTop() < 650) && $(window).width() >= 769) {
+
+            $('.mrt-img').addClass('mrt-active');
+            $('.mrt-shadow').addClass('mrt-active');
+
           } else {
-            if ($(this).scrollTop() < 500  && $(window).width() >= 769) {
+
               fixedNav.removeClass('show');
-            }
+              $('.mrt-img').removeClass('mrt-active');
+            	$('.mrt-shadow').removeClass('mrt-active');
           }
         userScrolled = false;
       }
@@ -325,7 +333,7 @@ var formSubmission = function() {
 // RUN FUNCTIONS WHEN DOCUMENT LOADED
 $(document).ready(function(){
   // loadweather();
-  // dropDown();
+  dropDown();
   buttonActive();
   renderRobot();
   rotateRobot();

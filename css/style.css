@@ -577,53 +577,60 @@ height: 100%;
   position: relative;
   height: 100%;
   padding: 0px 0px 85px;
-  background-color: #FFFFFF;
+  background-color: #fafafa;
   border-top: 1px solid #EDEDED;
+}
+.mcgill-racing-background-image {
+  height: 800px;
+  background: url(../../img/test-background-hero-image.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .mrt-img {
   position: relative;
-  left: -260px;
-  transform: rotateX(-4deg) translate3d(0px, -150px, -100px);
-  -webkit-transform:  rotateX(-4deg) translate3d(0px, -150px, -100px);
-  -moz-transition:    all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -webkit-transition: all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -o-transition:      all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition:         all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  height: 500px;
+  margin-left: -90px;
+  transform:          rotateX(19deg) rotateY(49deg) rotateZ(-9.4deg) translate3d(844px,-215px,-1076px);
+  -webkit-transform:  rotateX(19deg) rotateY(49deg) rotateZ(-9.4deg) translate3d(844px,-215px,-1076px);
+  -moz-transition:    all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+  -webkit-transition: all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+  -o-transition:      all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+  transition:         all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
 }
 .mrt-shadow {
-  opacity: 0.2;
+  opacity: 1;
   position: relative;
   background: rgba(0,0,0,0.55);
-  left: -260px;
   width: 800px;
   box-shadow: 0px 15px 100px #000;
-  height: 1px;
-  transform: translate3d(0px, 0px, -100px);
-  -webkit-transform:   translate3d(0px, 0px, -100px);
-  -moz-transition:     all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -webkit-transition:  all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -o-transition:       all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition:          all 1100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  height: 50px;
+  transform:          rotateX(19deg) rotateY(49deg) rotateZ(-9.4deg) translate3d(844px,-215px,-1076px);
+  -webkit-transform:  rotateX(19deg) rotateY(49deg) rotateZ(-9.4deg) translate3d(844px,-215px,-1076px);
+  -moz-transition:     all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+  -webkit-transition:  all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+  -o-transition:       all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+  transition:          all 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
 }
-.mrt-img-container {
-  margin: 275px auto;
-  width: 300px;
-  height: 300px;
+.mrt-image-container {
+  margin: 0 auto;
+  text-align: center;
     backface-visibility: visible;
    perspective-origin: 50% 50%;
    transform-style: preserve-3d;
    -webkit-backface-visibility: visible;
    -webkit-perspective-origin: 50% 50%;
    -webkit-transform-style: preserve-3d;
-   perspective: 500px;
-    -webkit-perspective: 500px;
+   perspective: 2000px;
+    -webkit-perspective: 2000px;
 }
 
 .mrt-active {
   opacity: 1;
-  transform: rotateX(0) translate3d(0px,0px,5px);
-     -webkit-transform: rotateX(0) translate3d(0px,0px,5px);
+  transform:          rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(90px,350px,0);;
+  -webkit-transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(90px,350px,0);;
 }
 .codecore-offset {
   position: relative;
