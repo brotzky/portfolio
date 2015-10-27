@@ -108,7 +108,14 @@ $.extend($.lazyLoadXT, {
 var buttonActive = function(){
   $('.render-control, .rotate-control').click(function() {
     $(this).toggleClass('button-active');
-    });
+
+    $('.rotate-control-hover').removeClass('both-buttons-active');
+
+    if ($('.rotate-control').hasClass('button-active') && $('.render-control').hasClass('button-active')) {
+    	console.log('test');
+    	$('.rotate-control-hover').addClass('both-buttons-active');
+    };
+   });
 }
 
 // TOGGLE ROTATION OF ROBOT
