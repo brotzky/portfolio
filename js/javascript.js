@@ -18,7 +18,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
  * (C) 2014 RESS.io
  * Licensed under MIT 
  *
- * Minor Adaptions by Dennis Brotzky
+ * Custom adaptions by Dennis Brotzky
  */
 
 (function ($, window, document, undefined) {
@@ -237,8 +237,6 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
             waitingMode = 0;
         }
     }
-
-
     /**
      * Queue check of lazy elements because of event e
      * @param {Event} [e]
@@ -247,29 +245,23 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
         if (!elements.length) {
             return;
         }
-
         // fast check for scroll event without new visible elements
         if (e && e.type === 'scroll' && e.currentTarget === window) {
             if (topLazy >= scrollTop()) {
                 return;
             }
         }
-
         if (!waitingMode) {
             setTimeout(timeoutLazyElements, 0);
         }
         waitingMode = 2;
     }
-
-
     /**
      * Initialize list of hidden elements
      */
     function initLazyElements() {
         $window.lazyLoadXT();
     }
-
-
     /**
      * Loading of all elements
      */
@@ -350,21 +342,30 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
     $(document).on('lazyshow', function (e) {
         var $this = $(e.target);
         // Dennis' Adaption to avoid 404 on data-bg and force loading
+        // Custom adaptations for background images
         if($this.context.outerHTML.indexOf('data-src') === -1) {
-            $this
-                .css('background-image', "url('" + $this.attr(bgAttr) + "')")
-                .removeAttr(bgAttr);
-            $this.addClass('lazy-loaded');
+
+        		(function($, dpr) {
+        		  if (dpr>1)
+        		    var bgAttr = 'data-bg-2x';
+	        		  $this
+	        		      .css('background-image', "url('" + $this.attr(bgAttr) + "')")
+	        		      .removeAttr(bgAttr);
+	        		  $this.addClass('lazy-loaded');
+        		})(jQuery, window.devicePixelRatio || 1);
+            
         };
     });
 
 })(window.jQuery || window.Zepto || window.$);
 
 // For HI-DPI Images
-// (function($, dpr) {
-//   if (dpr>1)
-//     $.lazyLoadXT.srcAttr = 'data-src-' + (dpr > 2 ? '2x' : (dpr > 1.5 ? '2x' : '1.5x'));
-// })(jQuery, window.devicePixelRatio || 1);
+// Use for regular data-src img elements
+(function($, dpr) {
+  if (dpr>1)
+
+    $.lazyLoadXT.srcAttr = 'data-src-2x';
+})(jQuery, window.devicePixelRatio || 1);
 
 // Custom extension of Lazy script
 $.extend($.lazyLoadXT, {
