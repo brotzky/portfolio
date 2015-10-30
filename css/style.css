@@ -95,7 +95,7 @@ html, body {
 .light-blue {
   color: #4C99E5;
 }
-.project-link:hover, 
+.project-link:hover,
 .project-link:active {
   color: #fff;
   background-color: #369;
@@ -107,7 +107,7 @@ html, body {
 }
 
 .project-link-container:hover .right-arrow {
-  fill: #fff; 
+  fill: #fff;
   left: 1px;
 }
 
@@ -636,6 +636,9 @@ header {
 .mcgill-racing-ow {
   color: #f9f9f9;
 }
+.mcgill-racing-hero {
+    position: relative;
+}
 .mcgill-racing-background-image {
   height: 1020px;
   background-color: #413F48;
@@ -674,11 +677,10 @@ header {
 }
 
 .mrt-image {
-  position: relative;
   width: 1024px;
-  margin-left: -90px;
-  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(792px,-201px,-1073px) scale(0.8);
-  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(792px,-201px,-1073px) scale(0.8);
+  margin-left: 115px;
+  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(853px,-201px,-1073px) scale(0.8);
+  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(853px,-201px,-1073px) scale(0.8);
   -moz-transition:    all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -webkit-transition: all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -o-transition:      all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
@@ -692,8 +694,8 @@ header {
   width: 800px;
   box-shadow: 0px 15px 100px #000;
   height: 50px;
-  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(792px,-201px,-1073px) scale(0.8);
-  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(792px,-201px,-1073px) scale(0.8);
+  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(853px,-201px,-1073px) scale(0.8);
+  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9.8deg) translate3d(853px,-201px,-1073px) scale(0.8);
   -moz-transition:     all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -webkit-transition:  all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -o-transition:       all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
@@ -701,6 +703,8 @@ header {
 }
 
 .mrt-image-container {
+    position: absolute;
+    top: 0px;
   margin: 0 auto;
   text-align: center;
     backface-visibility: visible;
@@ -716,8 +720,8 @@ header {
 .mrt-active {
   opacity: 1;
   box-shadow: 0px 8px 18px rgba(0,0,0,0.25);
-  transform:          rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(90px,350px,0) scale(1);
-  -webkit-transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(90px,350px,0) scale(1);
+  transform:          rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(30px,350px,0) scale(1);
+  -webkit-transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(30px,350px,0) scale(1);
 }
 
 .mrt-block-active {
@@ -897,6 +901,7 @@ textarea {
     -webkit-transform-origin: 50% 50% 0;
     transform-origin: 50% 50% 0;
     background-color:#F9F9F9;
+    border-bottom: 1px solid #EDEDED;
 }
 .text {
     position: relative;
