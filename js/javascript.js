@@ -333,6 +333,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
     });
 
 })(window.jQuery || window.Zepto || window.$);
+
 (function ($) {
     var options = $.lazyLoadXT,
         bgAttr = options.bgAttr || 'data-bg';
@@ -347,13 +348,13 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 
         		(function($, dpr) {
         		  if (dpr>1)
-        		    var bgAttr = 'data-bg-2x';
-	        		  $this
-	        		      .css('background-image', "url('" + $this.attr(bgAttr) + "')")
-	        		      .removeAttr(bgAttr);
-	        		  $this.addClass('lazy-loaded');
+        		    bgAttr = 'data-bg-2x';
         		})(jQuery, window.devicePixelRatio || 1);
             
+            $this
+                .css('background-image', "url('" + $this.attr(bgAttr) + "')")
+                .removeAttr(bgAttr);
+            $this.addClass('lazy-loaded');
         };
     });
 
@@ -407,7 +408,7 @@ var dropDown = function() {
 
     	// Class adaption for Laptops, and small screens
     	if($(window).height() < 900) {
-       if (($(this).scrollTop() > 1700) && $(window).width() >= 1269) {
+       if (($(this).scrollTop() > 2000) && $(window).width() >= 1269) {
           mrtImage.addClass('mrt-active');
           mrtShadow.addClass('mrt-active');
           mrtContent.addClass('mrt-block-active');
@@ -420,7 +421,7 @@ var dropDown = function() {
     	}
     // Medium sized screens
 		if($(window).height() >= 900 && $(window).height() <= 1100) {
-	   if (($(this).scrollTop() > 1550) && $(window).width() >= 1269) {
+	   if (($(this).scrollTop() < 1850) && $(window).width() >= 1269) {
 	      mrtImage.addClass('mrt-active');
 	      mrtShadow.addClass('mrt-active');
 	      mrtContent.addClass('mrt-block-active');
@@ -433,7 +434,7 @@ var dropDown = function() {
 		}
 		// Large sized screens
 		if($(window).height() > 1100) {
-	   if (($(this).scrollTop() > 1250) && $(window).width() >= 1269) {
+	   if (($(this).scrollTop() > 1650) && $(window).width() >= 1269) {
 	      mrtImage.addClass('mrt-active');
 	      mrtShadow.addClass('mrt-active');
 	      mrtContent.addClass('mrt-block-active');
@@ -615,7 +616,7 @@ var playVideo = function() {
 
       var video = document.getElementById("myVideo");
 
-       if (pageYOffset > 2000 && pageYOffset < 5000) {
+       if (pageYOffset > 1500 && pageYOffset < 8000) {
           // play video in pageYOffset region
           video.play();
         } else {
