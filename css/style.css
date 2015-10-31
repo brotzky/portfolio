@@ -653,7 +653,7 @@ header {
     -webkit-transition: all 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -moz-transition:    all 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -o-transition:      all 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition:         all 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);    
+    transition:         all 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -webkit-animation: ipadAnimation cubic-bezier(0.455, 0.03, 0.515, 0.955) 11s infinite; /* Safari 4+ */
     -moz-animation:    ipadAnimation cubic-bezier(0.455, 0.03, 0.515, 0.955) 11s infinite; /* Fx 5+ */
     -o-animation:      ipadAnimation cubic-bezier(0.455, 0.03, 0.515, 0.955) 11s infinite; /* Opera 12+ */
@@ -696,8 +696,8 @@ header {
 }
 
 .lightspeed-achievements > li::before {
-  content:"–"; 
-  position:absolute; 
+  content:"–";
+  position:absolute;
   left:-20px;
 }
 
@@ -789,10 +789,10 @@ header {
 }
 
 .mrt-image {
-  width: 1024px;
-  margin-left: 115px;
-  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(817px,-103px,-1118px) scale(0.9);
-  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(817px,-103px,-1118px) scale(0.9);
+  width: 1080px;
+  margin-left: 80px;
+  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(824px,-145px,-1119px) scale(0.85);
+  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(824px,-145px,-1119px) scale(0.85);
   -moz-transition:    all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -webkit-transition: all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -o-transition:      all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
@@ -806,8 +806,8 @@ header {
   width: 800px;
   box-shadow: 0px 15px 100px #000;
   height: 50px;
-  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(817px,-103px,-1118px) scale(0.9);
-  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(817px,-103px,-1118px) scale(0.9);
+  transform:          rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(824px,-145px,-1119px) scale(0.85);
+  -webkit-transform:  rotateX(21deg) rotateY(48.5deg) rotateZ(-9deg) translate3d(824px,-145px,-1119px) scale(0.85);
   -moz-transition:     all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -webkit-transition:  all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   -o-transition:       all 1111ms cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
@@ -831,9 +831,10 @@ header {
 
 .mrt-active {
   opacity: 1;
+  border-radius: 10px;
   box-shadow: 0px 8px 18px rgba(0,0,0,0.25);
-  transform:          rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(30px,270px,0) scale(1);
-  -webkit-transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(30px,270px,0) scale(1);
+  transform:          rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(25px,270px,0) scale(1);
+  -webkit-transform:  rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(25px,270px,0) scale(1);
 }
 
 .mrt-block-active {
@@ -3041,7 +3042,7 @@ footer {
         margin: 0 auto;
         width: 100%;
     }
-    
+
     .mcgill-racing-background-image {
       background-image: none;
     }
