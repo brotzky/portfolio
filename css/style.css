@@ -370,7 +370,7 @@ header {
                               INTRODUCTION  STYLES
 ===============================================*/
 .introduction {
-  padding-bottom: 80px;
+  padding: 0 0 120px;
   background:#F9F9F9;
   background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/2wBDAQICAgICAgUDAwUKBwYHCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wAARCAAkACADAREAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAQACAwn/xAAoEAABAwMCBQQDAAAAAAAAAAABAhEhABIxA0EyUWGh8BMiQmJxsdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A92wyQQlYAkupWOuaADJSpJVa2ByJyc9tqAvIBlgFPmB1Jfz9AqLGFWs5y9uZzIPLwBFQCDgWyfr1Z5FBXpSVKJACQ4lmHMyHoJk8VxSEuSX4eZMzQRUTATIlxsZ9zPudvAB6iUhQKw6ZKnxOc0CkmVXM0kO9ofOZB5UCFKDge1pzickA9qDO3E1k+4uzu6jM/igiDpibUgF3fhMh846UCCGUOFuxfOaCQWJTczAEfXYb7+dAnKAomG4Q/CZDme3gDOtqHRBt+IKgCTlyKBUqy5vjpJUC5ybv4KDn6y0p1QMI0ipIc5BPWg2vUVph0kwl8mTQf//Z);
 }
@@ -384,7 +384,7 @@ header {
 .writing-book {
   position: absolute;
   z-index: 1;
-  top: 345px;
+  top: 385px;
   left: -200px;
   height: 380px;
    -moz-transform: rotate(45deg);
