@@ -370,7 +370,7 @@ header {
                               INTRODUCTION  STYLES
 ===============================================*/
 .introduction {
-  padding: 0 0 120px;
+  padding: 0 0 200px;
   background:#F9F9F9;
   background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/2wBDAQICAgICAgUDAwUKBwYHCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wAARCAAkACADAREAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAQACAwn/xAAoEAABAwMCBQQDAAAAAAAAAAABAhEhABIxA0EyUWGh8BMiQmJxsdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A92wyQQlYAkupWOuaADJSpJVa2ByJyc9tqAvIBlgFPmB1Jfz9AqLGFWs5y9uZzIPLwBFQCDgWyfr1Z5FBXpSVKJACQ4lmHMyHoJk8VxSEuSX4eZMzQRUTATIlxsZ9zPudvAB6iUhQKw6ZKnxOc0CkmVXM0kO9ofOZB5UCFKDge1pzickA9qDO3E1k+4uzu6jM/igiDpibUgF3fhMh846UCCGUOFuxfOaCQWJTczAEfXYb7+dAnKAomG4Q/CZDme3gDOtqHRBt+IKgCTlyKBUqy5vjpJUC5ybv4KDn6y0p1QMI0ipIc5BPWg2vUVph0kwl8mTQf//Z);
 }
@@ -395,7 +395,7 @@ header {
 }
 .pencil {
   position: absolute;
-  right: -60px;
+  right: -100px;
   -webkit-backface-visibility: hidden;
   -moz-transform: rotate(5deg);
     -ms-transform: rotate(5deg);
@@ -406,7 +406,7 @@ header {
 .post-it {
   position: absolute;
   z-index: 1;
-  top: 400px;
+  top: 450px;
   right: 40px;
   height: 200px;
    -moz-transform: rotate(-15deg);
@@ -3118,6 +3118,9 @@ footer {
                               Small Tablets
 ===============================================*/
   @media screen and (max-width: 720px){
+    .introduction {
+      padding: 0 0 180px;
+    }
     .block-content {
       max-width: 88%;
       height: 100%;
@@ -3170,7 +3173,7 @@ footer {
       right: -160px;
     }
     .post-it {
-      top: 570px;
+      top: 520px;
       height: 180px;
       right: -20px;
     }
@@ -3248,7 +3251,7 @@ footer {
       height: 180px;
     }
     .post-it {
-      top: 570px;
+      top: 520px;
       height: 180px;
       right: -20px;
     }
@@ -3285,7 +3288,7 @@ footer {
       height: 180px;
     }
     .post-it {
-      top: 630px;
+      top: 590px;
       height: 180px;
       right: -20px;
     }
@@ -3303,7 +3306,7 @@ footer {
       height: 180px;
     }
     .post-it {
-      top: 730px;
+      top: 680px;
       height: 180px;
       right: -20px;
     }
@@ -3330,10 +3333,10 @@ footer {
 ===============================================*/
   @media screen and (max-width: 414px){
     .writing-book {
-      top: 770px;
+      top: 720px;
     }
     .post-it {
-      top: 810px;
+      top: 730px;
     }
     .codecore-macbook {
       width: 485px;

@@ -2,7 +2,7 @@
  *
  * Contains:
  * jQuery Source
- * Lazy loading 
+ * Lazy loading
  * Custom functions
  *    - executed at the bottom
  * /
@@ -16,7 +16,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 /*! Lazy Load XT v1.0.6 2014-11-19
  * http://ressio.github.io/lazy-load-xt
  * (C) 2014 RESS.io
- * Licensed under MIT 
+ * Licensed under MIT
  *
  * Custom adaptions by Dennis Brotzky
  */
@@ -350,7 +350,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
         		  if (dpr>1)
         		    bgAttr = 'data-bg-2x';
         		})(jQuery, window.devicePixelRatio || 1);
-            
+
             $this
                 .css('background-image', "url('" + $this.attr(bgAttr) + "')")
                 .removeAttr(bgAttr);
@@ -408,7 +408,7 @@ var dropDown = function() {
 
     	// Class adaption for Laptops, and small screens
     	if($(window).height() < 900) {
-       if (($(this).scrollTop() > 2000) && $(window).width() >= 1269) {
+       if (($(this).scrollTop() > 2120) && $(window).width() >= 1269) {
           mrtImage.addClass('mrt-active');
           mrtShadow.addClass('mrt-active');
           mrtContent.addClass('mrt-block-active');
@@ -421,7 +421,7 @@ var dropDown = function() {
     	}
     // Medium sized screens
 		if($(window).height() >= 900 && $(window).height() <= 1100) {
-	   if (($(this).scrollTop() < 1850) && $(window).width() >= 1269) {
+	   if (($(this).scrollTop() < 1970) && $(window).width() >= 1269) {
 	      mrtImage.addClass('mrt-active');
 	      mrtShadow.addClass('mrt-active');
 	      mrtContent.addClass('mrt-block-active');
@@ -434,7 +434,7 @@ var dropDown = function() {
 		}
 		// Large sized screens
 		if($(window).height() > 1100) {
-	   if (($(this).scrollTop() > 1650) && $(window).width() >= 1269) {
+	   if (($(this).scrollTop() > 1770) && $(window).width() >= 1269) {
 	      mrtImage.addClass('mrt-active');
 	      mrtShadow.addClass('mrt-active');
 	      mrtContent.addClass('mrt-block-active');
@@ -629,7 +629,7 @@ var playVideo = function() {
   // 400ms delay on scroll event
 }
 
-// Form Submittion 
+// Form Submittion
 var formSubmission = function() {
   $('#myForm').on('submit', function(event) {
     event.preventDefault();
