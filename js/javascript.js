@@ -408,7 +408,7 @@ var dropDown = function() {
 
     	// Class adaption for Laptops, and small screens
     	if($(window).height() < 900) {
-       if (($(this).scrollTop() > 2120) && $(window).width() >= 1269) {
+       if (($(this).scrollTop() > 2200) && $(window).width() >= 1269) {
           mrtImage.addClass('mrt-active');
           mrtShadow.addClass('mrt-active');
           mrtContent.addClass('mrt-block-active');
@@ -421,7 +421,7 @@ var dropDown = function() {
     	}
     // Medium sized screens
 		if($(window).height() >= 900 && $(window).height() <= 1100) {
-	   if (($(this).scrollTop() < 1970) && $(window).width() >= 1269) {
+	   if (($(this).scrollTop() < 2050) && $(window).width() >= 1269) {
 	      mrtImage.addClass('mrt-active');
 	      mrtShadow.addClass('mrt-active');
 	      mrtContent.addClass('mrt-block-active');
@@ -434,7 +434,7 @@ var dropDown = function() {
 		}
 		// Large sized screens
 		if($(window).height() > 1100) {
-	   if (($(this).scrollTop() > 1770) && $(window).width() >= 1269) {
+	   if (($(this).scrollTop() > 1850) && $(window).width() >= 1269) {
 	      mrtImage.addClass('mrt-active');
 	      mrtShadow.addClass('mrt-active');
 	      mrtContent.addClass('mrt-block-active');
