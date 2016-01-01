@@ -626,7 +626,7 @@ header {
 
 .lightspeed {
   overflow-y: hidden;
-  overflow-x: visible;
+  overflow-x: hidden;
   position: relative;
   padding: 80px 0px 120px;
   border-top: 1px solid #EDEDED;

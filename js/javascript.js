@@ -370,7 +370,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 
 // Custom extension of Lazy script
 $.extend($.lazyLoadXT, {
-  edgeY:  400
+  edgeY:  800
 });
 // End Lazy Load Scripts
 
@@ -421,7 +421,22 @@ var dropDown = function() {
     	}
     // Medium sized screens
 		if($(window).height() >= 900 && $(window).height() <= 1100) {
-	   if (($(this).scrollTop() < 2050) && $(window).width() >= 1269) {
+			console.log('medium');
+	   if (($(this).scrollTop() > 1955) && $(window).width() >= 1269) {
+			mrtImage.addClass('mrt-active');
+			mrtShadow.addClass('mrt-active');
+			mrtContent.addClass('mrt-block-active');
+	    } else {
+	        mrtImage.removeClass('mrt-active');
+	      	mrtShadow.removeClass('mrt-active');
+	      	mrtContent.removeClass('mrt-block-active');
+	    }
+	  	userScrolled = false;
+		}
+		// Large sized screens
+		console.log($(this).scrollTop(), $(window).height());
+		if($(window).height() > 1100) {
+	   if (($(this).scrollTop() > 1950) && $(window).width() >= 1269) {
 	      mrtImage.addClass('mrt-active');
 	      mrtShadow.addClass('mrt-active');
 	      mrtContent.addClass('mrt-block-active');
@@ -432,19 +447,6 @@ var dropDown = function() {
 	    }
 	  	userScrolled = false;
 		}
-		// Large sized screens
-		if($(window).height() > 1100) {
-	   if (($(this).scrollTop() > 1850) && $(window).width() >= 1269) {
-	      mrtImage.addClass('mrt-active');
-	      mrtShadow.addClass('mrt-active');
-	      mrtContent.addClass('mrt-block-active');
-	    } else {
-        mrtImage.removeClass('mrt-active');
-      	mrtShadow.removeClass('mrt-active');
-	      mrtContent.removeClass('mrt-block-active');
-	    }
-	  	userScrolled = false;
-			}
 	  }
 	// 400ms delay on scroll event
 	}, 400);
