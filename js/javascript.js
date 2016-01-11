@@ -3,7 +3,7 @@
  * Contains:
  * jQuery Source
  * Lazy loading
- * Custom functions
+ * siteFunctiosn custom module
  *    - executed at the bottom
  * /
 
@@ -374,322 +374,332 @@ $.extend($.lazyLoadXT, {
 });
 // End Lazy Load Scripts
 
-// IIFE for variable scope
-var hamburgerMenu = function() {
-    var hamburgerMenu   = $('.nav-hamburger');
-    var hamburgerTop      = $('.nav-top');
-    var hamburgerMiddle  = $('.nav-middle');
-    var hamburgerBottom = $('.nav-bottom');
-    var fixedNav = $('nav');
 
-    hamburgerMenu.on('click', function() {
-        hamburgerTop.toggleClass('nav-top-active');
-        hamburgerMiddle.toggleClass('nav-middle-active');
-        hamburgerBottom.toggleClass('nav-bottom-active');
-        fixedNav.toggleClass('show');
-    });
-}
+(function($){
 
-// Function used for scroll aevent handlers
-// 400ms delay to avoid overloading
-var dropDown = function() {
+	'use strict';
 
-  var userScrolled = false;
-  var mrtImage = $('.mrt-image');
-  var mrtShadow = $('.mrt-shadow');
-  var mrtContent = $('.mcgill-racing-content');
+	// siteFunctions module
+	var siteFunctions = {
 
-  $(window).scroll(function() {
-    userScrolled = true;
-  });
+		init: function() {
+			this.hamburgerMenu();
+			this.dropDown();
+			this.buttonActive();
+			this.renderRobot();
+			this.rotateRobot();
+			this.heartReveal();
+			this.playVideo();
+			this.formSubmission();
+		},
 
-  setInterval(function() {
-    if (userScrolled) {
+		hamburgerMenu: function() {
+		    var hamburgerMenu   = $('.nav-hamburger');
+		    var hamburgerTop    = $('.nav-top');
+		    var hamburgerMiddle = $('.nav-middle');
+		    var hamburgerBottom = $('.nav-bottom');
+		    var fixedNav        = $('nav');
 
-    	// Class adaption for Laptops, and small screens
-    	if($(window).height() < 900) {
-       if (($(this).scrollTop() > 2200) && $(window).width() >= 1269) {
-          mrtImage.addClass('mrt-active');
-          mrtShadow.addClass('mrt-active');
-          mrtContent.addClass('mrt-block-active');
-        } else {
-          mrtImage.removeClass('mrt-active');
-        	mrtShadow.removeClass('mrt-active');
-        	mrtContent.removeClass('mrt-block-active');
-        }
-      	userScrolled = false;
-    	}
-    // Medium sized screens
-		if($(window).height() >= 900 && $(window).height() <= 1100) {
-			console.log('medium');
-	   if (($(this).scrollTop() > 1955) && $(window).width() >= 1269) {
-			mrtImage.addClass('mrt-active');
-			mrtShadow.addClass('mrt-active');
-			mrtContent.addClass('mrt-block-active');
-	    } else {
-	        mrtImage.removeClass('mrt-active');
-	      	mrtShadow.removeClass('mrt-active');
-	      	mrtContent.removeClass('mrt-block-active');
-	    }
-	  	userScrolled = false;
+		    hamburgerMenu.on('click', function() {
+		        hamburgerTop.toggleClass('nav-top-active');
+		        hamburgerMiddle.toggleClass('nav-middle-active');
+		        hamburgerBottom.toggleClass('nav-bottom-active');
+		        fixedNav.toggleClass('show');
+		    });
+		},
+
+		// Function used for scroll aevent handlers
+		// 400ms delay to avoid overloading
+		dropDown: function() {
+
+		  var userScrolled = false;
+		  var mrtImage = $('.mrt-image');
+		  var mrtShadow = $('.mrt-shadow');
+		  var mrtContent = $('.mcgill-racing-content');
+
+		  $(window).scroll(function() {
+		    userScrolled = true;
+		  });
+
+		  setInterval(function() {
+		    if (userScrolled) {
+
+	    	// Class adaption for Laptops, and small screens
+	    	if($(window).height() < 900) {
+		       if (($(this).scrollTop() > 2200) && $(window).width() >= 1269) {
+		          mrtImage.addClass('mrt-active');
+		          mrtShadow.addClass('mrt-active');
+		          mrtContent.addClass('mrt-block-active');
+		        } else {
+		          mrtImage.removeClass('mrt-active');
+		        	mrtShadow.removeClass('mrt-active');
+		        	mrtContent.removeClass('mrt-block-active');
+		        }
+		      	userScrolled = false;
+		    	}
+	    	// Medium sized screens
+			if($(window).height() >= 900 && $(window).height() <= 1100) {
+			   if (($(this).scrollTop() > 1955) && $(window).width() >= 1269) {
+					mrtImage.addClass('mrt-active');
+					mrtShadow.addClass('mrt-active');
+					mrtContent.addClass('mrt-block-active');
+			    } else {
+			        mrtImage.removeClass('mrt-active');
+			      	mrtShadow.removeClass('mrt-active');
+			      	mrtContent.removeClass('mrt-block-active');
+			    }
+			  	userScrolled = false;
+			}
+				// Large sized screens
+			if($(window).height() > 1100) {
+			   if (($(this).scrollTop() > 1950) && $(window).width() >= 1269) {
+			      mrtImage.addClass('mrt-active');
+			      mrtShadow.addClass('mrt-active');
+			      mrtContent.addClass('mrt-block-active');
+			    } else {
+		        mrtImage.removeClass('mrt-active');
+		      	mrtShadow.removeClass('mrt-active');
+			      mrtContent.removeClass('mrt-block-active');
+			    }
+			  	userScrolled = false;
+				}
+			}
+			// 400ms delay on scroll event
+			}, 400);
+		},
+
+		// Robot hover control
+		buttonActive: function(){
+			var rotateControlHover = $('.rotate-control-hover');
+		  $('.render-control, .rotate-control').click(function() {
+		    $(this).toggleClass('button-active');
+		    rotateControlHover.removeClass('both-buttons-active');
+		    if ($('.rotate-control').hasClass('button-active') && $('.render-control').hasClass('button-active')) {
+		    	rotateControlHover.addClass('both-buttons-active');
+		    };
+		  });
+		},
+
+		// Toggle Rotate of Robot
+	 	rotateRobot: function(){
+		  var sliderValue = $('.slider-control').val() + 's';
+		  var cube = $('.cube');
+		  // PlayState browser compatibility
+		  var playState = 'animation-play-state';
+		  var playStateWebkit = '-webkit-animation-play-state';
+		  var playStateMoz = '-moz-animation-play-state';
+		  var playStateMs = '-ms-animation-play-state';
+		  var playStateO = '-o-animation-play-state';
+		  var rotateControl = $('.rotate-control');
+		  // More browser compatibility
+		  cube.css(playStateWebkit, 'paused');
+		  cube.css(playStateMoz, 'paused');
+		  cube.css(playStateMs, 'paused');
+		  cube.css(playStateO, 'paused');
+		  cube.css(playState, 'paused');
+
+		  rotateControl.click(function() {
+		    cube.css(playState, function(i, v) {
+		      return v === 'paused' ? 'running' : 'paused';
+		    });
+		      $('body').toggleClass('paused', $(this).css(playState) === 'paused');
+		      $('body').toggleClass('paused', $(this).css(playStateWebkit) === 'paused');
+		      $('body').toggleClass('paused', $(this).css(playStateMoz) === 'paused');
+		      $('body').toggleClass('paused', $(this).css(playStateMs) === 'paused');
+		      $('body').toggleClass('paused', $(this).css(playStateO) === 'paused');
+		  });
+		},
+
+		// Render 3D option for Robot
+		renderRobot: function (){
+		  var heartHolder = $('.heartholder');
+		  var cube = $('.cube');
+		  var renderControl = $('.render-control');
+		  var onOffHolder = $('.onoffholder');
+
+		  heartHolder.removeClass('heart');
+		  onOffHolder.remove('.on-off');
+
+		  renderControl.click(function() {
+		    cube.toggleClass('preserve3D');
+		    heartHolder.toggleClass('heart');
+		    var onOffHolder = $('.onoffholder');
+
+		    // If cube doesn't have figure class="on-off" append one
+		    // else, do nothing.
+		    if (cube.find('figure.on-off').length === 0){
+		      heartReveal();
+		    } else {
+		        onOffHolder.remove('.on-off');
+		    }
+		  });
+		},
+
+		// Robot Heart reveal on Hover
+		heartReveal: function(){
+		  var bodyBack = $('.body-back');
+		  var onOff = $('.on-off');
+		  var bodyFront = $('.body-front');
+		  var frontPanel = $('.front-panel');
+		    // Body-Back translate
+		  $('.stage').mouseenter(function()  {
+		    // Use textIndent as dummy property
+		    bodyBack.animate({  textIndent: -200 }, {
+		      step: function(now,fx) {
+		        $(this).css('-webkit-transform','translateZ('+now+'px)');
+		      },
+		        duration:'slow'
+		      },'linear');
+		  })
+		    .mouseleave(function() {
+		      var bodyBack = $('.body-back');
+		      bodyBack.animate({  textIndent: -66 }, {
+		      step: function(now,fx) {
+		        $(this).css('-webkit-transform','translateZ('+now+'px)');
+		        },
+		      duration:'slow'
+		    },'linear');
+		  });
+		 // On Off Button on Back Translate
+		  $('.stage').mouseenter(function()  {
+		  onOff.animate({  overFlow: -203 }, {
+		          step: function(now,fx) {
+		          $(this).css('-webkit-transform','translateZ('+now+'px)','-webkit-transform','rotateY('+180+'deg)');
+		          $(this).css('-moz-transform','translateZ('+now+'px)','-moz-transform','rotateY('+180+'deg)');
+		          $(this).css('-ms-transform','translateZ('+now+'px)','-ms-transform','rotateY('+180+'deg)');
+		        },
+		        duration:'slow'
+		      },'linear');
+		    })
+		      .mouseleave(function() {
+		      onOff.animate({  overFlow: -70 }, {
+		        step: function(now,fx) {
+		          $(this).css('-webkit-transform','translateZ('+now+'px)');
+		        },
+		        duration:'slow'
+		      },'linear');
+		    });
+
+		  // Body Front Translate
+		  $('.stage').mouseenter(function()  {
+		    bodyFront.animate({  textIndent: 200 }, {
+		        step: function(now,fx) {
+		          $(this).css('-webkit-transform','translateZ('+now+'px)');
+		        },
+		        duration:'slow'
+		      },'linear');
+		    })
+		      .mouseleave(function() {
+		      bodyFront.animate({  textIndent: 66 }, {
+		        step: function(now,fx) {
+		          $(this).css('-webkit-transform','translateZ('+now+'px)');
+		        },
+		        duration:'slow'
+		      },'linear');
+		    });
+
+		    // Body Front  PANEL Translate
+		    $('.stage').mouseenter(function()  {
+		    frontPanel.animate({  textIndent: 203 }, {
+		        step: function(now,fx) {
+		          $(this).css('-webkit-transform','translateZ('+now+'px)');
+		        },
+		        duration:'slow'
+		      },'linear');
+		    })
+		      .mouseleave(function() {
+		      frontPanel.animate({  textIndent: 68 }, {
+		        step: function(now,fx) {
+		          $(this).css('-webkit-transform','translateZ('+now+'px)');
+		        },
+		        duration:'slow'
+		      },'linear');
+		    });
+		  },
+
+		// Another Scroll handler to Play/Pause Video depending on scroll positions
+		playVideo: function() {
+		  var userScrolled = false;
+
+		  $(window).scroll(function() {
+		    userScrolled = true;
+		  });
+
+		  setInterval(function() {
+		    if (userScrolled) {
+
+		      var video = document.getElementById("myVideo");
+
+		       if (pageYOffset > 1500 && pageYOffset < 8000) {
+		          // play video in pageYOffset region
+		          video.play();
+		        } else {
+		          // pause video if not in region
+		          video.pause();
+		        }
+		      userScrolled = false;
+		    }
+		  }, 400);
+		  // 400ms delay on scroll event
+		},
+
+		// Form Submittion
+		formSubmission: function() {
+
+		  $('#myForm').on('submit', function(event) {
+		    event.preventDefault();
+
+		    var button = $('.button');
+		    var response = $('.response-message');
+		    var name = $("#name").val();
+		    var email = $("#email").val();
+		    var message = $("#message").val();
+		    var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
+
+		    // Insane Validation process ;)
+		    if((name !== "") && (email !== "") && (message !== "")) {
+
+		    	// Ajax post to contact.php that processes and sends the email
+		      $.ajax({
+		        type:'POST',
+		        url: 'php/contact.php',
+		        data: dataString,
+		        success: function(msg) {
+		            button.css( "background-image", "none");
+		            button.animate({
+		              backgroundColor: "#43A047",
+		              color: "#fff",
+		            }, 300 );
+		            window.setTimeout(function () {
+		              button.delay( 1000 ).html('success');
+		            }, 400);
+		            response.animate({opacity: 0.8});
+		            response.fadeIn('slow').html('Thank you, ' + name + ', I will respond shortly.');
+		        },
+		        error:  function(xhr, status, error) {
+		          button.css( "background-image", "none");
+		          button.animate({
+		              backgroundColor: "#CD4435",
+		              color: "#fff",
+		            }, 300 );
+		            window.setTimeout(function () {
+		              button.delay( 1000 ).html('error');
+		            }, 400);
+		          response.animate({opacity: 0.8});
+		          response.fadeIn('slow').html('Sorry, ' + name + ', there was an error. Please email <a class="header-mailto" href="mailto:brotzky@gmail.com?Subject=Form%20error" target="_top">brotzky@gmail.com</a>.');
+		        }
+		      });
+		    } else {
+		      $('input, textarea').addClass('color');
+		    }
+		  });
 		}
-		// Large sized screens
-		console.log($(this).scrollTop(), $(window).height());
-		if($(window).height() > 1100) {
-	   if (($(this).scrollTop() > 1950) && $(window).width() >= 1269) {
-	      mrtImage.addClass('mrt-active');
-	      mrtShadow.addClass('mrt-active');
-	      mrtContent.addClass('mrt-block-active');
-	    } else {
-        mrtImage.removeClass('mrt-active');
-      	mrtShadow.removeClass('mrt-active');
-	      mrtContent.removeClass('mrt-block-active');
-	    }
-	  	userScrolled = false;
-		}
-	  }
-	// 400ms delay on scroll event
-	}, 400);
-}
 
-// Robot hover control
-var buttonActive = function(){
-	var rotateControlHover = $('.rotate-control-hover');
+	} // siteFunctions module end
 
-  $('.render-control, .rotate-control').click(function() {
-    $(this).toggleClass('button-active');
+	// Running functions on documnet load
+	$(document).ready(function(){
+		siteFunctions.init();
+	});
 
-    rotateControlHover.removeClass('both-buttons-active');
-
-    if ($('.rotate-control').hasClass('button-active') && $('.render-control').hasClass('button-active')) {
-    	rotateControlHover.addClass('both-buttons-active');
-    };
-  });
-}
-
-// Toggle Rotate of Robot
-var rotateRobot = function(){
-  var sliderValue = $('.slider-control').val() + 's';
-  var cube = $('.cube');
-
-  // PlayState browser compatibility
-  var playState = 'animation-play-state';
-  var playStateWebkit = '-webkit-animation-play-state';
-  var playStateMoz = '-moz-animation-play-state';
-  var playStateMs = '-ms-animation-play-state';
-  var playStateO = '-o-animation-play-state';
-  var rotateControl = $('.rotate-control');
-  // More browser compatibility
-  cube.css(playStateWebkit, 'paused');
-  cube.css(playStateMoz, 'paused');
-  cube.css(playStateMs, 'paused');
-  cube.css(playStateO, 'paused');
-  cube.css(playState, 'paused');
-
-  rotateControl.click(function() {
-    cube.css(playState, function(i, v) {
-      return v === 'paused' ? 'running' : 'paused';
-    });
-      $('body').toggleClass('paused', $(this).css(playState) === 'paused');
-      $('body').toggleClass('paused', $(this).css(playStateWebkit) === 'paused');
-      $('body').toggleClass('paused', $(this).css(playStateMoz) === 'paused');
-      $('body').toggleClass('paused', $(this).css(playStateMs) === 'paused');
-      $('body').toggleClass('paused', $(this).css(playStateO) === 'paused');
-  });
-}
-
-// Render 3D option for Robot
-var renderRobot = function (){
-  var heartHolder = $('.heartholder');
-  var cube = $('.cube');
-  var renderControl = $('.render-control');
-  var onOffHolder = $('.onoffholder');
-
-  heartHolder.removeClass('heart');
-  onOffHolder.remove('.on-off');
-
-  renderControl.click(function() {
-    cube.toggleClass('preserve3D');
-    heartHolder.toggleClass('heart');
-    var onOffHolder = $('.onoffholder');
-
-    // If cube doesn't have figure class="on-off" append one
-    // else, do nothing.
-    if (cube.find('figure.on-off').length === 0){
-      heartReveal();
-    } else {
-        onOffHolder.remove('.on-off');
-    }
-  });
-}
-
-// HRObot Heart reveal on Hover
-var heartReveal = function(){
-  var bodyBack = $('.body-back');
-  var onOff = $('.on-off');
-  var bodyFront = $('.body-front');
-  var frontPanel = $('.front-panel');
-    // Body-Back translate
-  $('.stage').mouseenter(function()  {
-    // Use textIndent as dummy property
-    bodyBack.animate({  textIndent: -200 }, {
-      step: function(now,fx) {
-        $(this).css('-webkit-transform','translateZ('+now+'px)');
-      },
-        duration:'slow'
-      },'linear');
-  })
-    .mouseleave(function() {
-      var bodyBack = $('.body-back');
-      bodyBack.animate({  textIndent: -66 }, {
-      step: function(now,fx) {
-        $(this).css('-webkit-transform','translateZ('+now+'px)');
-        },
-      duration:'slow'
-    },'linear');
-  });
- // On Off Button on Back Translate
-  $('.stage').mouseenter(function()  {
-  onOff.animate({  overFlow: -203 }, {
-          step: function(now,fx) {
-          $(this).css('-webkit-transform','translateZ('+now+'px)','-webkit-transform','rotateY('+180+'deg)');
-          $(this).css('-moz-transform','translateZ('+now+'px)','-moz-transform','rotateY('+180+'deg)');
-          $(this).css('-ms-transform','translateZ('+now+'px)','-ms-transform','rotateY('+180+'deg)');
-        },
-        duration:'slow'
-      },'linear');
-    })
-      .mouseleave(function() {
-      onOff.animate({  overFlow: -70 }, {
-        step: function(now,fx) {
-          $(this).css('-webkit-transform','translateZ('+now+'px)');
-        },
-        duration:'slow'
-      },'linear');
-    });
-
-  // Body Front Translate
-  $('.stage').mouseenter(function()  {
-    bodyFront.animate({  textIndent: 200 }, {
-        step: function(now,fx) {
-          $(this).css('-webkit-transform','translateZ('+now+'px)');
-        },
-        duration:'slow'
-      },'linear');
-    })
-      .mouseleave(function() {
-      bodyFront.animate({  textIndent: 66 }, {
-        step: function(now,fx) {
-          $(this).css('-webkit-transform','translateZ('+now+'px)');
-        },
-        duration:'slow'
-      },'linear');
-    });
-
-    // Body Front  PANEL Translate
-    $('.stage').mouseenter(function()  {
-    frontPanel.animate({  textIndent: 203 }, {
-        step: function(now,fx) {
-          $(this).css('-webkit-transform','translateZ('+now+'px)');
-        },
-        duration:'slow'
-      },'linear');
-    })
-      .mouseleave(function() {
-      frontPanel.animate({  textIndent: 68 }, {
-        step: function(now,fx) {
-          $(this).css('-webkit-transform','translateZ('+now+'px)');
-        },
-        duration:'slow'
-      },'linear');
-    });
-  }
-
-// Another Scroll handler to Play/Pause Video depending on scroll positions
-var playVideo = function() {
-  var userScrolled = false;
-
-  $(window).scroll(function() {
-    userScrolled = true;
-  });
-
-  setInterval(function() {
-    if (userScrolled) {
-
-      var video = document.getElementById("myVideo");
-
-       if (pageYOffset > 1500 && pageYOffset < 8000) {
-          // play video in pageYOffset region
-          video.play();
-        } else {
-          // pause video if not in region
-          video.pause();
-        }
-      userScrolled = false;
-    }
-  }, 400);
-  // 400ms delay on scroll event
-}
-
-// Form Submittion
-var formSubmission = function() {
-  $('#myForm').on('submit', function(event) {
-    event.preventDefault();
-
-    var button = $('.button');
-    var response = $('.response-message');
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var message = $("#message").val();
-    var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
-
-    // Insane Validation process ;)
-    if((name != "") && (email != "") && (message != "")) {
-
-    	// Ajax post to contact.php that processes and sends the email
-      $.ajax({
-        type:'POST',
-        url: 'php/contact.php',
-        data: dataString,
-        success: function(msg) {
-            button.css( "background-image", "none");
-            button.animate({
-              backgroundColor: "#43A047",
-              color: "#fff",
-            }, 300 );
-            window.setTimeout(function () {
-              button.delay( 1000 ).html('success');
-            }, 400);
-            response.animate({opacity: 0.8});
-            response.fadeIn('slow').html('Thank you, ' + name + ', I will respond shortly.');
-        },
-        error:  function(xhr, status, error) {
-          button.css( "background-image", "none");
-          button.animate({
-              backgroundColor: "#CD4435",
-              color: "#fff",
-            }, 300 );
-            window.setTimeout(function () {
-              button.delay( 1000 ).html('error');
-            }, 400);
-          response.animate({opacity: 0.8});
-          response.fadeIn('slow').html('Sorry, ' + name + ', there was an error. Please email <a class="header-mailto" href="mailto:brotzky@gmail.com?Subject=Form%20error" target="_top">brotzky@gmail.com</a>.');
-        }
-      });
-    } else {
-      $('input, textarea').addClass('color');
-    }
-  });
-}
-
-// Running functions on documnet load
-$(document).ready(function(){
-	hamburgerMenu();
-  dropDown();
-  buttonActive();
-  renderRobot();
-  rotateRobot();
-  heartReveal();
-  playVideo();
-  formSubmission();
-});
+})(window.jQuery);
