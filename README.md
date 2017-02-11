@@ -1,5 +1,5 @@
 Portfolio Website
 ==========================
 
-Live website can be found at www.dennisbrotzky.me
+Live website can be found at https://brotzky.co
 
